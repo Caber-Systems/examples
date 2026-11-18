@@ -1,0 +1,32 @@
+{
+  "amy@demo.local": [
+    "What provisions define the initial term and duration of the agreement?",
+    "How does the agreement specify its effective date?",
+    "Where does the agreement identify the parties' principal places of business?",
+    "What work or services are included in the scope of work?",
+    "Which exhibits describe the work categories or service requirements?",
+    "What obligations does each party have under the agreement?",
+    "What provisions address renewal or extension of the agreement term?",
+    "How does the agreement describe changes to the scope of work?"
+  ],
+  "bob@demo.local": [
+    "What provisions define the initial term and duration of the agreement?",
+    "How does the agreement specify its effective date?",
+    "Where does the agreement identify the parties' principal places of business?",
+    "What work or services are included in the scope of work?",
+    "Which exhibits describe the work categories or service requirements?",
+    "What obligations does each party have under the agreement?",
+    "What provisions address renewal or extension of the agreement term?",
+    "How does the agreement describe changes to the scope of work?"
+  ],
+  "admin@demo.local": [
+    "What domain is specified for this document?",
+    "Which document chain is listed first for Amy?",
+    "What is the second document chain listed for Amy?",
+    "Which document chain is listed first for Bob?",
+    "What is the second document chain listed for Bob?"
+  ],
+  "carol@demo.local": [
+    "Where are the principal offices of Provider and Client located?"
+  ]
+}

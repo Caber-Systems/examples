@@ -1,0 +1,30 @@
+[
+  {
+    "question": "What are the start and end dates of the Initial Term stated in the agreement?",
+    "target_version": "v01"
+  },
+  {
+    "question": "What is EDGE Communications Solutions, LLC's principal place of business?",
+    "target_version": "v02"
+  },
+  {
+    "question": "What four types of work are listed in the Scope of Work?",
+    "target_version": "v03"
+  },
+  {
+    "question": "In what document shall the Work to be performed by Subcontractor for EDGE be described?",
+    "target_version": "v03"
+  },
+  {
+    "question": "What may EDGE do if Subcontractor fails to pay lower-tier subcontractors, materialmen, or suppliers, after written notice and a reasonable opportunity to cure?",
+    "target_version": "v04"
+  },
+  {
+    "question": "What kinds of problems with a Lower-tier Subcontractor's work may lead EDGE to request that Subcontractor terminate that Lower-tier Subcontractor?",
+    "target_version": "v05"
+  },
+  {
+    "question": "If a Lower-tier Subcontractor's issue is not cured within the reasonable period specified by EDGE, what must Subcontractor do?",
+    "target_version": "v05"
+  }
+]

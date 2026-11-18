@@ -1,0 +1,40 @@
+# FastAPI for HTTP REST API
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# HTTP client for making requests
+httpx==0.25.0
+
+# BM25 search functionality.
+#
+# HARD dependency, not optional (ticket 03). Under the agentic-tools profile
+# `search_files_bm25` raises when rank_bm25 is missing rather than silently
+# answering with substring matching under a tool that advertises BM25 ranking.
+rank-bm25>=0.2.2
+nltk>=3.8.1
+
+# Semantic search (`search_semantic`) over Milvus, via shared/milvus_query.
+# Ticket 06 chose to EMBED the query path rather than proxy to the ragchat
+# service: a proxy adds a hop and a second service whose health can fail the demo,
+# and buys nothing, because provenance is captured agent-side at the framework
+# tool wrapper and does not care where the query runs.
+pymilvus>=2.3,<3
+openai>=1.40
+
+# Embedded vector store for agentic-tools and hipaa-ner (MCP_EMBEDDED_MILVUS=true).
+# Only its bundled server binary is used: entrypoint.sh runs it on TCP 19530 so
+# those demos need no Milvus standalone or etcd container. Pinned because the
+# binary's on-disk format and CLI arguments are not a stable interface.
+milvus-lite==2.5.1
+
+# MinIO client for object storage
+minio>=7.1.0
+
+# S3 client for the agentic-tools one-shot `seed` compose service, which runs
+# demos/agentic-tools/seed/seed.py on this image (the object-store upload uses
+# boto3). Not imported by the MCP server itself.
+boto3>=1.34
+
+# pycaber[auto] installed from local wheel in Dockerfile
+jsonschema>=4.23,<5
+wrapt>=1.14

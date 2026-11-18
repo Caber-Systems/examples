@@ -1,0 +1,32 @@
+# Users log in by EMAIL only: each login name is a lowercase email, equal to
+# its `email` field and held by one zt-mimic directory user
+# (CaberApp/zt-mimic/seed/directory.json). app.py checks this at startup
+# (directory_lookup.validate_login_config) and refuses to serve otherwise.
+credentials:
+  usernames:
+    amy@demo.local:
+      email: amy@demo.local
+      name: Amy (Cats Co.)
+      password: cats123
+    bob@demo.local:
+      email: bob@demo.local
+      name: Bob (Dogs Inc.)
+      password: dogs123
+    carol@demo.local:
+      email: carol@demo.local
+      name: Carol
+      password: carol123
+    admin@demo.local:
+      email: admin@demo.local
+      name: Admin
+      password: admin123
+cookie:
+  expiry_days: 30
+  key: agentgov-demo-cookie-secret-key-2026
+  name: agentgov_demo_cookie
+pre-authorized:
+  emails:
+  - amy@demo.local
+  - bob@demo.local
+  - carol@demo.local
+  - admin@demo.local

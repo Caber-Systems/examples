@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "produced_at": "2026-11-18T23:35:57Z",
+  "demo": "agentic-tools",
+  "pycaber": {
+    "version": "0.2.5683",
+    "index": "https://pypi.org/simple"
+  },
+  "notice": {
+    "tag": "v1.2",
+    "url": "https://raw.githubusercontent.com/Caber-Systems/preview-license/v1.2/LICENSE-PREVIEW.md",
+    "sha256": "0d80284a7f16a915c18199973615f7a9804b288c625858490735bfd01be3bbde"
+  },
+  "images": {
+    "caber-core": {
+      "ref": "ghcr.io/caber-systems/caber-core:0.2.5683",
+      "digest": "sha256:b359ae31426fab23af8e5970236c73638ce85950328fc894ecf5f37f8b363de4"
+    },
+    "versitygw": {
+      "ref": "ghcr.io/versity/versitygw:v1.7.0",
+      "digest": "sha256:c4cbd9d9cb8dedbb055ac788dbd02635651b9b1cebac95b095b3217231aa87ad"
+    },
+    "opensearch": {
+      "ref": "opensearchproject/opensearch:2.19.5",
+      "digest": "sha256:4ee82ecb35d837a6186c81aaa64c8a5bce71aa956edbd87f1f684ab56af52c44"
+    },
+    "elasticmq": {
+      "ref": "softwaremill/elasticmq-native:1.6.11",
+      "digest": "sha256:fe3af4a8dd59f310b20e07ec3499cfdeb16a14f518c95ad7e70f200845dce3f5"
+    },
+    "caber-console": {
+      "ref": "ghcr.io/caber-systems/caber-console",
+      "digest": "sha256:32d73e1ae3e7022d54a65352ffad6398401f54408b34f510136352653947731f"
+    },
+    "mock-idp": {
+      "ref": "ghcr.io/caber-systems/mock-idp:preview",
+      "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "sources": {
+    "caber_demos_commit": "9ae42e4af7c67c75909a4e167731102590ee0b9b",
+    "pycaber_commit": "05deb4837ebfcf238e6cbee9c10ebee3273b8605",
+    "mvp_commit": "b79dd9c12f77818ffd7feb94e202d6f70af90f3c",
+    "console_commit": "afe0c3b97b2796c742628c8937409f8a3951ea33",
+    "org_profile_commit": "c1f3194baaa77d95bdd891b36f52840343cbace1"
+  },
+  "llm_usage": {
+    "anthropic": {
+      "chat_model": "claude-sonnet-5-5",
+      "embedding_model": "nvidia/nemotron-3-embed-1b",
+      "embedding_provider": "nvidia",
+      "chat_input_tokens": 142328,
+      "chat_output_tokens": 10156,
+      "embedding_tokens": 106752,
+      "requests": 673
+    },
+    "nvidia": {
+      "chat_model": "meta/muse-glimmer-30b",
+      "embedding_model": "nvidia/nemotron-3-embed-1b",
+      "chat_input_tokens": 108532,
+      "chat_output_tokens": 15051,
+      "embedding_tokens": 106788,
+      "requests": 676
+    },
+    "gemini": {
+      "chat_model": "gemini-3.8-flash",
+      "embedding_model": "nvidia/nemotron-3-embed-1b",
+      "embedding_provider": "nvidia",
+      "chat_input_tokens": 118739,
+      "chat_output_tokens": 4837,
+      "embedding_tokens": 106670,
+      "requests": 667
+    },
+    "openai": {
+      "chat_model": "gpt-6-luna",
+      "embedding_model": "nvidia/nemotron-3-embed-1b",
+      "embedding_provider": "nvidia",
+      "chat_input_tokens": 81956,
+      "chat_output_tokens": 3660,
+      "embedding_tokens": 106840,
+      "requests": 672
+    },
+    "groq": {
+      "chat_model": "openai/gpt-oss-120b",
+      "embedding_model": "nvidia/nemotron-3-embed-1b",
+      "embedding_provider": "nvidia",
+      "chat_input_tokens": 97785,
+      "chat_output_tokens": 10406,
+      "embedding_tokens": 106729,
+      "requests": 671
+    }
+  },
+  "image_sizes_compressed_bytes": {
+    "caber-core": 490241504,
+    "caber-console": 58094874,
+    "mock-idp": 0
+  },
+  "files_sha256": {
+    "common/agentic-chat-app": "f05eeba7b824fed1f7e2e96d4e72adf3fa3ce271cf2ada28c15545102293e0fa",
+    "common/mcp-server": "bc5615d81e8edec3bd3215ecc0125e458a991b0e04e331f8b16b291470b23b3a",
+    "demos/agentic-tools/config/config-chat.json": "bc9e446a401416046bf7dfacba03ec5aab8a80874527b0d07ccff4bfc55060da",
+    "demos/agentic-tools/config/config-mcp.json": "848a653b9d96a2b4b432caf6c8d1ecac86f3c1ca6ef5484906ab69b22bc3e879",
+    "demos/agentic-tools/config/config.json": "c798f3d8aa37d98fda49cadfb392ddc94e135214b91b971135f3b1d861655063",
+    "demos/agentic-tools/docker-compose.yaml": "68201261faf6ba7acdde06eb554e6913923524069d8603614326cd8084c6aea8",
+    "demos/agentic-tools/seed": "20d42306f1af9ee8b6159f36aba385ed25b3d636ddc28ab4ff792279c84def61"
+  },
+  "durations_s": {
+    "build": 2.018,
+    "run_to_healthy": 45.0,
+    "ci_total": 8.906
+  },
+  "ci": {
+    "runner": "demo.py ci --locked",
+    "run_summary_sha256": "1b899b1feda5f1b364d5c00d55242510ee3e021f2eeea425f2e19dc7dba42ec9"
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+    .label {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 4px;
+      color: rgb(49, 51, 63);
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px 12px;
+      border: 1px solid rgb(206, 212, 218);
+      border-radius: 4px;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    textarea:focus {
+      border-color: rgb(255, 75, 75);
+    }
+  </style>
+</head>
+<body>
+  <div class="label" id="label"></div>
+  <textarea id="input"></textarea>
+
+  <script>
+    // Minimal Streamlit component API (no CDN dependency)
+    var Streamlit = (function() {
+      var lastValue = undefined;
+
+      function sendMessage(type, data) {
+        window.parent.postMessage(
+          Object.assign({ isStreamlitMessage: true, type: type }, data || {}),
+          "*"
+        );
+      }
+
+      return {
+        setComponentReady: function() {
+          sendMessage("streamlit:componentReady", { apiVersion: 1 });
+        },
+        setComponentValue: function(value) {
+          if (value !== lastValue) {
+            lastValue = value;
+            sendMessage("streamlit:setComponentValue", { value: value });
+          }
+        },
+        setFrameHeight: function(height) {
+          height = height || document.body.scrollHeight;
+          sendMessage("streamlit:setFrameHeight", { height: height });
+        },
+        RENDER_EVENT: "streamlit:render",
+        events: {
+          addEventListener: function(type, callback) {
+            window.addEventListener("message", function(event) {
+              if (event.data && event.data.type === type) {
+                callback({ detail: { args: event.data.args, disabled: event.data.disabled } });
+              }
+            });
+          }
+        }
+      };
+    })();
+
+    function xorDecode(encodedBytes, keyBytes) {
+      var decoded = new Uint8Array(encodedBytes.length);
+      for (var i = 0; i < encodedBytes.length; i++) {
+        decoded[i] = encodedBytes[i] ^ keyBytes[i % keyBytes.length];
+      }
+      return new TextDecoder("utf-8").decode(decoded);
+    }
+
+    var textarea = document.getElementById("input");
+    var labelEl = document.getElementById("label");
+    var initialized = false;
+
+    function onRender(event) {
+      var args = event.detail.args;
+      labelEl.textContent = args.label || "";
+      textarea.style.height = (args.height || 100) + "px";
+
+      if (!initialized && args.encoded && args.encoded.length > 0) {
+        var plaintext = xorDecode(args.encoded, args.xor_key);
+        textarea.value = plaintext;
+        Streamlit.setComponentValue(plaintext);
+        initialized = true;
+      }
+
+      Streamlit.setFrameHeight();
+    }
+
+    textarea.addEventListener("input", function() {
+      initialized = true;
+      Streamlit.setComponentValue(textarea.value);
+    });
+
+    Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender);
+    Streamlit.setComponentReady();
+  </script>
+</body>
+</html>

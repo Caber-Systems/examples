@@ -1,0 +1,270 @@
+{
+  "group": "dogs",
+  "chain": "ftenetworks-inc-02-18-201",
+  "topology": "pruned_tree",
+  "nodes": [
+    {
+      "node_id": "v01",
+      "parents": [],
+      "change_pct": 0.0,
+      "is_root": true,
+      "is_tip": false,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "root",
+      "branch_step": null,
+      "branch_group": null
+    },
+    {
+      "node_id": "v02",
+      "parents": [
+        "v01"
+      ],
+      "change_pct": 19.339903550520987,
+      "is_root": false,
+      "is_tip": false,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "branch",
+      "branch_step": 0,
+      "branch_group": "canonical"
+    },
+    {
+      "node_id": "v03",
+      "parents": [
+        "v02"
+      ],
+      "change_pct": 22.715192325284633,
+      "is_root": false,
+      "is_tip": true,
+      "is_canonical": true,
+      "is_merge": false,
+      "role": "branch",
+      "branch_step": 1,
+      "branch_group": "canonical"
+    },
+    {
+      "node_id": "v04",
+      "parents": [
+        "v01"
+      ],
+      "change_pct": 32.371412809199505,
+      "is_root": false,
+      "is_tip": false,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "branch",
+      "branch_step": 0,
+      "branch_group": "normal"
+    },
+    {
+      "node_id": "v05",
+      "parents": [
+        "v04"
+      ],
+      "change_pct": 16.426182748708516,
+      "is_root": false,
+      "is_tip": true,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "branch",
+      "branch_step": 1,
+      "branch_group": "normal"
+    }
+  ],
+  "edges": [
+    [
+      "v01",
+      "v02"
+    ],
+    [
+      "v02",
+      "v03"
+    ],
+    [
+      "v01",
+      "v04"
+    ],
+    [
+      "v04",
+      "v05"
+    ]
+  ],
+  "authored_version_forest": {
+    "schema": "authored_version_forest.v1",
+    "authoritative": true,
+    "direction": "provenance",
+    "topology": "pruned_tree",
+    "root": "v01",
+    "tips": [
+      "v03",
+      "v05"
+    ],
+    "canonical_tip": "v03",
+    "version_order": [
+      "v03",
+      "v05",
+      "v04",
+      "v02",
+      "v01"
+    ],
+    "nodes": [
+      {
+        "node_id": "v01",
+        "parents": [],
+        "children": [
+          "v02",
+          "v04"
+        ],
+        "depth": 0,
+        "version_sequence": 4,
+        "change_pct": 0.0,
+        "is_root": true,
+        "is_tip": false,
+        "is_canonical": false,
+        "is_merge": false
+      },
+      {
+        "node_id": "v02",
+        "parents": [
+          "v01"
+        ],
+        "children": [
+          "v03"
+        ],
+        "depth": 1,
+        "version_sequence": 3,
+        "change_pct": 19.339903550520987,
+        "is_root": false,
+        "is_tip": false,
+        "is_canonical": false,
+        "is_merge": false
+      },
+      {
+        "node_id": "v03",
+        "parents": [
+          "v02"
+        ],
+        "children": [],
+        "depth": 2,
+        "version_sequence": 0,
+        "change_pct": 22.715192325284633,
+        "is_root": false,
+        "is_tip": true,
+        "is_canonical": true,
+        "is_merge": false
+      },
+      {
+        "node_id": "v04",
+        "parents": [
+          "v01"
+        ],
+        "children": [
+          "v05"
+        ],
+        "depth": 1,
+        "version_sequence": 2,
+        "change_pct": 32.371412809199505,
+        "is_root": false,
+        "is_tip": false,
+        "is_canonical": false,
+        "is_merge": false
+      },
+      {
+        "node_id": "v05",
+        "parents": [
+          "v04"
+        ],
+        "children": [],
+        "depth": 2,
+        "version_sequence": 1,
+        "change_pct": 16.426182748708516,
+        "is_root": false,
+        "is_tip": true,
+        "is_canonical": false,
+        "is_merge": false
+      }
+    ],
+    "edges": [
+      [
+        "v01",
+        "v02"
+      ],
+      [
+        "v01",
+        "v04"
+      ],
+      [
+        "v02",
+        "v03"
+      ],
+      [
+        "v04",
+        "v05"
+      ]
+    ]
+  },
+  "signals": {
+    "v01": [
+      {
+        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v01.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "path": "dogs/v01.md",
+        "source_system": "s3",
+        "mtime": 1000000,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v02": [
+      {
+        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v02.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "path": "dogs/v02.md",
+        "source_system": "s3",
+        "mtime": 1000100,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v03": [
+      {
+        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v03.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "path": "dogs/v03.md",
+        "source_system": "s3",
+        "mtime": 1000200,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v04": [
+      {
+        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v04.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "path": "dogs/v04.md",
+        "source_system": "s3",
+        "mtime": 1000300,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v05": [
+      {
+        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v05.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "path": "dogs/v05.md",
+        "source_system": "s3",
+        "mtime": 1000400,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ]
+  },
+  "canonical_tip": "v03",
+  "source_doc": {
+    "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+    "source_url": "cuad:FTENETWORKS_INC_02_18_2016-EX-99.4-STRATEGIC ALLIANCE AGREEMENT.txt",
+    "doc_index": 21
+  }
+}

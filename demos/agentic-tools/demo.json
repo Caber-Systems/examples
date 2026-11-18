@@ -1,0 +1,53 @@
+{
+  "name": "agentic-tools",
+  "title": "A LangGraph agent chooses among four MCP tools and formulates its own Milvus queries, governed by Caber at the LangChain BaseTool boundary. Qualifies the platform under real tool-calling rather than a scripted backend.",
+  "compose": [
+    "docker-compose.yaml"
+  ],
+  "platform_compose": [],
+  "services": {
+    "app": "agentic-chat-app",
+    "mcp": "mcp-server-back-door",
+    "seed": "seed",
+    "identity": "mock-idp",
+    "console": "caber-console",
+    "dashboard": "csi-dashboard",
+    "init": "csi-init"
+  },
+  "ports": {
+    "console": 3000,
+    "dashboard": 8050,
+    "mcp-server": 8082,
+    "agentic-chat": 8083
+  },
+  "urls": {
+    "console": "http://localhost:3000",
+    "dashboard": "http://localhost:8050",
+    "chat": "http://localhost:8083"
+  },
+  "what_to_try": [
+    "Which service categories appear in my contracts and what security controls do they require?",
+    "Break down the monthly pricing and payment terms listed across my contract documents.",
+    "Describe the automatic renewal clauses and termination conditions in my agreements.",
+    "Summarize the scope of services and compliance obligations found in my available contracts.",
+    "What are the billing structures and total monthly costs for contracts I have access to?"
+  ],
+  "policies": {
+    "enable": [],
+    "disable": []
+  },
+  "health": [
+    {
+      "url": "http://localhost:8083/_stcore/health",
+      "timeout_s": 360
+    },
+    {
+      "url": "http://localhost:3000",
+      "timeout_s": 60
+    },
+    {
+      "url": "http://localhost:8050",
+      "timeout_s": 360
+    }
+  ]
+}
