@@ -22,12 +22,7 @@
 ***
 <!-- profile:end -->
 
-See Caber govern what an AI agent sees—live on your laptop in minutes.
-
-In **`demos/agentic-tools/`**, a LangGraph agent chooses among four MCP tools and writes its own vector-store queries over a corpus of contracts. Caber intercepts and governs every tool result down to the sentence, so what the agent sees depends on **who asked**, **how fresh the content is**, and **whether it is a duplicate copy**:
-
-- **Run in observe mode first:** answers flow through unchanged while the Caber Console records every policy hit, stale version, and duplicate snippet.
-- **Flip to enforce mode with one command:** Caber redacts unauthorized, stale, and duplicate text before the agent ever sees it.
+In **`demos/agentic-tools/`**, a LangGraph agent chooses among four MCP tools and writes its own vector-store queries over a corpus of contracts. Caber intercepts and governs every tool result down to the sentence, so what the agent sees depends on **who asked**, **how fresh the content is**, and **whether it is a duplicate copy**. Once images are pulled, building and starting the stack to healthy takes about **45 seconds**.
 
 **Before you start.** Runs on **macOS** or **Linux** (`x86_64` or `arm64`; Windows is not supported). You need:
 
@@ -90,6 +85,10 @@ What to try:
 ```
 
 **Tips for exploring Observe Mode:**
+
+- **Run in observe mode first:** answers flow through unchanged while the Caber Console records every policy hit, stale version, and duplicate snippet.
+- **Flip to enforce mode with one command:** Caber redacts unauthorized, stale, and duplicate text before the agent ever sees it.
+
 1. Open the chat app at http://localhost:8083 and sign in as **`amy@demo.local`** (password: **`cats123`**), or try **`bob@demo.local`** (**`dogs123`**) to compare what a different user is entitled to see.
 2. Ask one of the suggested questions above.
 3. Open the Caber Console at http://localhost:3000 to inspect the live audit trace. In observe mode, the answer goes through unchanged while the Console flags what Caber would have redacted:
@@ -138,17 +137,6 @@ Nothing is written outside `examples/`, Docker, your system temp directory, and 
 ## demo.py command summary
 
 Run `./demo.py --help` or see the [Demo CLI Reference](https://docs.caber.com/demos-and-benchmarks/demo-cli-reference.html) for full details.
-
-| Command | What it does |
-| --- | --- |
-| `./demo.py check` | Verifies Docker, ports, disk, and your LLM API key. |
-| `./demo.py build` | Pulls pinned images from `preview.lock.json` and builds the two demo app images. |
-| `./demo.py run` | Creates `.env.local` on first run, starts the stack in observe mode, seeds data, and opens browser tabs. |
-| `./demo.py enforce` | Switches the running demo to enforce mode (active redaction). |
-| `./demo.py observe` | Switches the running demo back to observe mode (audit only). |
-| `./demo.py down` | Prints token usage and removes containers, network, volumes, and demo images. |
-| `./demo.py down --keep-images` | Stops the stack and removes volumes, but keeps Docker images for fast restarts. |
-| `./demo.py down --purge` | Same as `down`, plus deletes `.env.local`. |
 
 ### Other LLM providers
 
@@ -200,27 +188,6 @@ LLM tokens that run used, per provider:
 | groq | openai/gpt-oss-120b | nvidia/nemotron-3-embed-1b | 97785 | 10406 | 106729 | 671 |
 | nvidia | meta/muse-glimmer-30b | nvidia/nemotron-3-embed-1b | 108532 | 15051 | 106788 | 676 |
 | openai | gpt-6-luna | nvidia/nemotron-3-embed-1b | 81956 | 3660 | 106840 | 672 |
-
-### List prices as published on 2026-11-05
-
-In USD per million tokens. This table is a fixed copy kept in the exporter; check the provider's own page before you rely on it.
-
-| Provider | Model | Input | Output |
-| --- | --- | --- | --- |
-| anthropic | claude-sonnet-5-5 | price not in table | price not in table |
-| nvidia | nvidia/nemotron-3-embed-1b | price not in table | n/a |
-| gemini | gemini-3.8-flash | price not in table | price not in table |
-| groq | openai/gpt-oss-120b | 0.15 | 0.75 |
-| nvidia | meta/muse-glimmer-30b | price not in table | price not in table |
-| openai | gpt-6-luna | price not in table | price not in table |
-
-Estimated cost of one run at those prices:
-
-- anthropic: price not in table
-- gemini: price not in table
-- groq: price not in table
-- nvidia: price not in table
-- openai: price not in table
 
 Caber Community Preview Edition License v1.2: https://raw.githubusercontent.com/Caber-Systems/preview-license/v1.2/LICENSE-PREVIEW.md
 <!-- lock:end -->
