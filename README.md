@@ -30,7 +30,7 @@ In **`demos/agentic-tools/`**, a LangGraph agent chooses among four MCP tools an
 - **Python 3.10+** (standard library only—nothing to install) and **`git`**
 - An **OpenAI API key** (or an API key for another supported LLM provider—Anthropic, NVIDIA, Gemini, or Groq; the demo has baked-in model defaults and skips any provider without a key; see the [Configuration & Environment Variables docs](https://docs.caber.com/configuration/environment-variables.html))
 
-**Licensing.** Caber's code in this repository is **MIT** licensed (`LICENSE`). The `pycaber` SDK and `caber-core` container image are governed by the [Caber Community Preview Edition License](https://docs.caber.com/legal/community-preview-license.html) (`LICENSE-PREVIEW.md`, for non-production evaluation; see [Preview Limits](https://docs.caber.com/legal/community-preview-limits.html)). All other images and packages carry their respective owners' licenses.
+This demo has full functionality. [Click here](#license) for limitations and license information.
 
 ## Quick Start: Six Commands
 
@@ -188,8 +188,6 @@ LLM tokens that run used, per provider:
 | groq | openai/gpt-oss-120b | nvidia/nemotron-3-embed-1b | 97785 | 10406 | 106729 | 671 |
 | nvidia | meta/muse-glimmer-30b | nvidia/nemotron-3-embed-1b | 108532 | 15051 | 106788 | 676 |
 | openai | gpt-6-luna | nvidia/nemotron-3-embed-1b | 81956 | 3660 | 106840 | 672 |
-
-Caber Community Preview Edition License v1.2: https://raw.githubusercontent.com/Caber-Systems/preview-license/v1.2/LICENSE-PREVIEW.md
 <!-- lock:end -->
 
 ## Help
@@ -199,5 +197,5 @@ Ask questions and share what you built in [GitHub Discussions](https://github.co
 ## License
 
 <!-- notice:begin -->
-Caber's code in this repository is MIT licensed (LICENSE), the pycaber SDK from PyPI and the caber-core container image are licensed under the [Caber Community Preview Edition License v1.2](https://raw.githubusercontent.com/Caber-Systems/preview-license/v1.2/LICENSE-PREVIEW.md) (shipped here as LICENSE-PREVIEW.md), and every other image and package the demo pulls or installs is licensed by its owner.
+Caber's code in this repository is MIT licensed (LICENSE), the pycaber SDK from PyPI and the caber-core and caber-console (CaberUserConsole) container images are licensed under the [Caber Community Preview Edition License v1.2](https://raw.githubusercontent.com/Caber-Systems/preview-license/v1.2/LICENSE-PREVIEW.md) (shipped here as LICENSE-PREVIEW.md; see [Community Preview Limits](https://docs.caber.com/legal/community-preview-limits.html) for evaluation limitations), and every other image and package the demo pulls or installs is licensed by its owner.
 <!-- notice:end -->
