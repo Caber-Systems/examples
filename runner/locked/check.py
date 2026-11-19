@@ -225,12 +225,16 @@ def provider_problems(env: Mapping[str, str], *, probe=llm_probe.probe_with_dim)
     ``<PROVIDER>_EMBEDDING_DIM`` is configured.
     """
     try:
-        resolve_providers(env)
+        resolved = resolve_providers(env)
+        selected_name = resolved["SELECTED_LLM_PROVIDER"]
     except EmbeddingDimMissing:
-        pass
+        selected_name = (env.get("SELECTED_LLM_PROVIDER") or "").strip().upper()
+        if not selected_name:
+            from runner.locked.providers import PROVIDERS
+            selected_name = next((p.name for p in PROVIDERS if (env.get(p.api_key_var) or "").strip()), "")
     except ProviderError as exc:
         return [str(exc)], None
-    problems, dim = probe((env.get("SELECTED_LLM_PROVIDER") or "").strip().upper(), env)
+    problems, dim = probe(selected_name, env)
     if problems:
         return list(problems), None
     try:

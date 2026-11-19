@@ -1,6 +1,6 @@
 {
   "group": "dogs",
-  "chain": "ftenetworks-inc-02-18-201",
+  "chain": "fte201-networks-02-18-201",
   "topology": "pruned_tree",
   "nodes": [
     {
@@ -207,8 +207,8 @@
   "signals": {
     "v01": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v01.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "object_id": "s3://fte201-networks-02-18-201/dogs/v01.md",
+        "bucket": "fte201-networks-02-18-201",
         "path": "dogs/v01.md",
         "source_system": "s3",
         "mtime": 1000000,
@@ -218,8 +218,8 @@
     ],
     "v02": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v02.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "object_id": "s3://fte201-networks-02-18-201/dogs/v02.md",
+        "bucket": "fte201-networks-02-18-201",
         "path": "dogs/v02.md",
         "source_system": "s3",
         "mtime": 1000100,
@@ -229,8 +229,8 @@
     ],
     "v03": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v03.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "object_id": "s3://fte201-networks-02-18-201/dogs/v03.md",
+        "bucket": "fte201-networks-02-18-201",
         "path": "dogs/v03.md",
         "source_system": "s3",
         "mtime": 1000200,
@@ -240,8 +240,8 @@
     ],
     "v04": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v04.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "object_id": "s3://fte201-networks-02-18-201/dogs/v04.md",
+        "bucket": "fte201-networks-02-18-201",
         "path": "dogs/v04.md",
         "source_system": "s3",
         "mtime": 1000300,
@@ -251,8 +251,8 @@
     ],
     "v05": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-201/dogs/v05.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "object_id": "s3://fte201-networks-02-18-201/dogs/v05.md",
+        "bucket": "fte201-networks-02-18-201",
         "path": "dogs/v05.md",
         "source_system": "s3",
         "mtime": 1000400,

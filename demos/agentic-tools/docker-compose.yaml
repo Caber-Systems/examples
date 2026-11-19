@@ -26,7 +26,7 @@ services:
       ANTHROPIC_EMBEDDING_MODEL: ${ANTHROPIC_EMBEDDING_MODEL:-}
       CABER_DEMO_USAGE_DIR: /var/lib/caber-demo/usage
       CSI_API_KEY: ${CSI_SEED_API_KEY}
-      CSI_CABER_HOST: http://csi-dashboard:8050
+      CSI_CABER_HOST: http://caber-core:5556
       CSI_CONFIG_FILE: /var/mvp/config-demo.json
       CSI_GLOBAL_PIPELINE_MODE_DUAL_FINGERPRINT: ${CSI_GLOBAL_PIPELINE_MODE_DUAL_FINGERPRINT:-merged}
       CSI_GLOBAL_REDACT_ENABLED: ${CSI_GLOBAL_REDACT_ENABLED:-false}
@@ -388,7 +388,7 @@ services:
         PYCABER_SPEC: ${PYCABER_SPEC:-}
     container_name: mcp-server-back-door
     depends_on:
-      csi-dashboard:
+      caber-core:
         condition: service_healthy
         required: true
       csi-dep-objstor:
@@ -403,7 +403,7 @@ services:
       ANTHROPIC_EMBEDDING_MODEL: ${ANTHROPIC_EMBEDDING_MODEL:-}
       CABER_DEMO_USAGE_DIR: /var/lib/caber-demo/usage
       CSI_API_KEY: ${CSI_SEED_API_KEY}
-      CSI_CABER_HOST: http://csi-dashboard:8050
+      CSI_CABER_HOST: http://caber-core:5556
       CSI_CONFIG_FILE: /var/mvp/config-demo.json
       CSI_GLOBAL_PIPELINE_MODE_DUAL_FINGERPRINT: ${CSI_GLOBAL_PIPELINE_MODE_DUAL_FINGERPRINT:-merged}
       CSI_GLOBAL_REDACT_ENABLED: ${MCP_GLOBAL_REDACT_ENABLED:-true}

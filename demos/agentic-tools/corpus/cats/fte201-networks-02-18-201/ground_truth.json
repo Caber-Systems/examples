@@ -1,6 +1,6 @@
 {
-  "group": "dogs",
-  "chain": "ftenetworks-inc-02-18-1-1",
+  "group": "cats",
+  "chain": "fte201-networks-02-18-201",
   "topology": "linear",
   "nodes": [
     {
@@ -20,7 +20,7 @@
       "parents": [
         "v01"
       ],
-      "change_pct": 26.329707884312512,
+      "change_pct": 37.153569488654455,
       "is_root": false,
       "is_tip": false,
       "is_canonical": false,
@@ -34,7 +34,7 @@
       "parents": [
         "v02"
       ],
-      "change_pct": 27.235570556167737,
+      "change_pct": 19.97854750501,
       "is_root": false,
       "is_tip": false,
       "is_canonical": false,
@@ -48,7 +48,7 @@
       "parents": [
         "v03"
       ],
-      "change_pct": 36.82337170766807,
+      "change_pct": 16.36731284487378,
       "is_root": false,
       "is_tip": false,
       "is_canonical": false,
@@ -62,7 +62,7 @@
       "parents": [
         "v04"
       ],
-      "change_pct": 27.70826632668696,
+      "change_pct": 28.74949016037285,
       "is_root": false,
       "is_tip": true,
       "is_canonical": true,
@@ -132,7 +132,7 @@
         ],
         "depth": 1,
         "version_sequence": 3,
-        "change_pct": 26.329707884312512,
+        "change_pct": 37.153569488654455,
         "is_root": false,
         "is_tip": false,
         "is_canonical": false,
@@ -148,7 +148,7 @@
         ],
         "depth": 2,
         "version_sequence": 2,
-        "change_pct": 27.235570556167737,
+        "change_pct": 19.97854750501,
         "is_root": false,
         "is_tip": false,
         "is_canonical": false,
@@ -164,7 +164,7 @@
         ],
         "depth": 3,
         "version_sequence": 1,
-        "change_pct": 36.82337170766807,
+        "change_pct": 16.36731284487378,
         "is_root": false,
         "is_tip": false,
         "is_canonical": false,
@@ -178,7 +178,7 @@
         "children": [],
         "depth": 4,
         "version_sequence": 0,
-        "change_pct": 27.70826632668696,
+        "change_pct": 28.74949016037285,
         "is_root": false,
         "is_tip": true,
         "is_canonical": true,
@@ -207,9 +207,9 @@
   "signals": {
     "v01": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-1-1/dogs/v01.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
-        "path": "dogs/v01.md",
+        "object_id": "s3://fte201-networks-02-18-201/cats/v01.md",
+        "bucket": "fte201-networks-02-18-201",
+        "path": "cats/v01.md",
         "source_system": "s3",
         "mtime": 1000000,
         "object_version": null,
@@ -218,9 +218,9 @@
     ],
     "v02": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-1-1/dogs/v02.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
-        "path": "dogs/v02.md",
+        "object_id": "s3://fte201-networks-02-18-201/cats/v02.md",
+        "bucket": "fte201-networks-02-18-201",
+        "path": "cats/v02.md",
         "source_system": "s3",
         "mtime": 1000100,
         "object_version": null,
@@ -229,9 +229,9 @@
     ],
     "v03": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-1-1/dogs/v03.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
-        "path": "dogs/v03.md",
+        "object_id": "s3://fte201-networks-02-18-201/cats/v03.md",
+        "bucket": "fte201-networks-02-18-201",
+        "path": "cats/v03.md",
         "source_system": "s3",
         "mtime": 1000200,
         "object_version": null,
@@ -240,9 +240,9 @@
     ],
     "v04": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-1-1/dogs/v04.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
-        "path": "dogs/v04.md",
+        "object_id": "s3://fte201-networks-02-18-201/cats/v04.md",
+        "bucket": "fte201-networks-02-18-201",
+        "path": "cats/v04.md",
         "source_system": "s3",
         "mtime": 1000300,
         "object_version": null,
@@ -251,9 +251,9 @@
     ],
     "v05": [
       {
-        "object_id": "s3://ftenetworks-inc-02-18-1-1/dogs/v05.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
-        "path": "dogs/v05.md",
+        "object_id": "s3://fte201-networks-02-18-201/cats/v05.md",
+        "bucket": "fte201-networks-02-18-201",
+        "path": "cats/v05.md",
         "source_system": "s3",
         "mtime": 1000400,
         "object_version": null,

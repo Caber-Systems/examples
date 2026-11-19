@@ -19,9 +19,9 @@
     [
       {
         "key": "cats/v01.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 0,
-        "path": "cats/ftenetworks-inc-02-18-201/v01.md",
+        "path": "cats/fte201-networks-02-18-201/v01.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 0
@@ -37,18 +37,18 @@
       },
       {
         "key": "dogs/v01.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
+        "bucket": "fte1-networks-02-18-1-1",
         "round_index": 0,
-        "path": "dogs/ftenetworks-inc-02-18-1-1/v01.md",
+        "path": "dogs/fte1-networks-02-18-1-1/v01.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 0
       },
       {
         "key": "dogs/v01.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 0,
-        "path": "dogs/ftenetworks-inc-02-18-201/v01.md",
+        "path": "dogs/fte201-networks-02-18-201/v01.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 0
@@ -57,9 +57,9 @@
     [
       {
         "key": "cats/v02.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 1,
-        "path": "cats/ftenetworks-inc-02-18-201/v02.md",
+        "path": "cats/fte201-networks-02-18-201/v02.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 1
@@ -75,27 +75,27 @@
       },
       {
         "key": "dogs/v02.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
+        "bucket": "fte1-networks-02-18-1-1",
         "round_index": 1,
-        "path": "dogs/ftenetworks-inc-02-18-1-1/v02.md",
+        "path": "dogs/fte1-networks-02-18-1-1/v02.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 1
       },
       {
         "key": "dogs/v02.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 1,
-        "path": "dogs/ftenetworks-inc-02-18-201/v02.md",
+        "path": "dogs/fte201-networks-02-18-201/v02.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 1
       },
       {
         "key": "dogs/v04.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 1,
-        "path": "dogs/ftenetworks-inc-02-18-201/v04.md",
+        "path": "dogs/fte201-networks-02-18-201/v04.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 1
@@ -104,9 +104,9 @@
     [
       {
         "key": "cats/v03.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 2,
-        "path": "cats/ftenetworks-inc-02-18-201/v03.md",
+        "path": "cats/fte201-networks-02-18-201/v03.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 2
@@ -131,27 +131,27 @@
       },
       {
         "key": "dogs/v03.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
+        "bucket": "fte1-networks-02-18-1-1",
         "round_index": 2,
-        "path": "dogs/ftenetworks-inc-02-18-1-1/v03.md",
+        "path": "dogs/fte1-networks-02-18-1-1/v03.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 2
       },
       {
         "key": "dogs/v03.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 2,
-        "path": "dogs/ftenetworks-inc-02-18-201/v03.md",
+        "path": "dogs/fte201-networks-02-18-201/v03.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 2
       },
       {
         "key": "dogs/v05.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 2,
-        "path": "dogs/ftenetworks-inc-02-18-201/v05.md",
+        "path": "dogs/fte201-networks-02-18-201/v05.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 2
@@ -160,9 +160,9 @@
     [
       {
         "key": "cats/v04.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 3,
-        "path": "cats/ftenetworks-inc-02-18-201/v04.md",
+        "path": "cats/fte201-networks-02-18-201/v04.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 3
@@ -178,9 +178,9 @@
       },
       {
         "key": "dogs/v04.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
+        "bucket": "fte1-networks-02-18-1-1",
         "round_index": 3,
-        "path": "dogs/ftenetworks-inc-02-18-1-1/v04.md",
+        "path": "dogs/fte1-networks-02-18-1-1/v04.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 3
@@ -189,18 +189,18 @@
     [
       {
         "key": "cats/v05.md",
-        "bucket": "ftenetworks-inc-02-18-201",
+        "bucket": "fte201-networks-02-18-201",
         "round_index": 4,
-        "path": "cats/ftenetworks-inc-02-18-201/v05.md",
+        "path": "cats/fte201-networks-02-18-201/v05.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 4
       },
       {
         "key": "dogs/v05.md",
-        "bucket": "ftenetworks-inc-02-18-1-1",
+        "bucket": "fte1-networks-02-18-1-1",
         "round_index": 4,
-        "path": "dogs/ftenetworks-inc-02-18-1-1/v05.md",
+        "path": "dogs/fte1-networks-02-18-1-1/v05.md",
         "event": null,
         "mechanism": "clean",
         "group_index": 4
