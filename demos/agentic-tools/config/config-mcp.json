@@ -77,7 +77,7 @@
     }
   },
   "Object_Sources": {
-    "contractObjs": {
+    "fte1Networks021811Objs": {
       "type": "versitygw",
       "addressing": "path",
       "host_full": "csi-dep-objstor:9000",
@@ -94,10 +94,11 @@
       "secretKey": "${CSI_OBJECT_STORE_SECRET}",
       "enableBktVersioning": false,
       "buckets": [
-        "contracts"
-      ]
+        "fte1-networks-02-18-1-1"
+      ],
+      "id_prefix": "cfte1netwo"
     },
-    "customerObjs": {
+    "fte201Networks0218201Objs": {
       "type": "versitygw",
       "addressing": "path",
       "host_full": "csi-dep-objstor:9000",
@@ -114,8 +115,30 @@
       "secretKey": "${CSI_OBJECT_STORE_SECRET}",
       "enableBktVersioning": false,
       "buckets": [
-        "customers"
-      ]
+        "fte201-networks-02-18-201"
+      ],
+      "id_prefix": "cfte201net"
+    },
+    "paciraPharmaceuticalsInObjs": {
+      "type": "versitygw",
+      "addressing": "path",
+      "host_full": "csi-dep-objstor:9000",
+      "host": "csi-dep-objstor:9000",
+      "urls": [
+        "http://csi-dep-objstor:9000"
+      ],
+      "ports": [
+        9000,
+        9001
+      ],
+      "region": "us-east-1",
+      "accessKey": "madmin",
+      "secretKey": "${CSI_OBJECT_STORE_SECRET}",
+      "enableBktVersioning": false,
+      "buckets": [
+        "pacira-pharmaceuticals-in"
+      ],
+      "id_prefix": "cpacirapha"
     }
   },
   "ApiMap": {
@@ -212,7 +235,7 @@
     ]
   },
   "Regex": {
-    "customer_bucket": "(contracts|customers)"
+    "customer_bucket": "(fte1\\-networks\\-02\\-18\\-1\\-1|fte201\\-networks\\-02\\-18\\-201|pacira\\-pharmaceuticals\\-in)"
   },
   "Governance_Policies": {
     "schema_version": 1,

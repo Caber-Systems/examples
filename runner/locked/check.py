@@ -26,7 +26,8 @@ from runner.locked.lock import LockError, load_lock
 from runner.locked.providers import EmbeddingDimMissing, ProviderError, resolve_providers
 
 GIB = 1024 ** 3
-MIN_MEMORY = 16 * GIB
+# On a 16 GiB VM or Docker Desktop slider at 16 GiB, the Linux kernel reserves ~0.4-0.5 GiB.
+MIN_MEMORY = 15 * GIB
 MIN_DISK = 20 * GIB
 MIN_COMPOSE = (2, 20)
 MIN_PYTHON = (3, 10)
