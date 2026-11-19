@@ -1,0 +1,281 @@
+{
+  "group": "cats",
+  "chain": "pacira-pharmaceuticals-in",
+  "topology": "diamond",
+  "nodes": [
+    {
+      "node_id": "v01",
+      "parents": [],
+      "change_pct": 0.0,
+      "is_root": true,
+      "is_tip": false,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "root",
+      "branch_step": null,
+      "branch_group": null
+    },
+    {
+      "node_id": "v02",
+      "parents": [
+        "v01"
+      ],
+      "change_pct": 32.72686535818946,
+      "is_root": false,
+      "is_tip": false,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "prefix",
+      "branch_step": null,
+      "branch_group": null
+    },
+    {
+      "node_id": "v03",
+      "parents": [
+        "v02"
+      ],
+      "change_pct": 23.59608860305376,
+      "is_root": false,
+      "is_tip": false,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "branch",
+      "branch_step": 0,
+      "branch_group": null
+    },
+    {
+      "node_id": "v04",
+      "parents": [
+        "v02"
+      ],
+      "change_pct": 19.230972317266897,
+      "is_root": false,
+      "is_tip": false,
+      "is_canonical": false,
+      "is_merge": false,
+      "role": "branch",
+      "branch_step": 0,
+      "branch_group": null
+    },
+    {
+      "node_id": "v05",
+      "parents": [
+        "v03",
+        "v04"
+      ],
+      "change_pct": 0.0,
+      "is_root": false,
+      "is_tip": true,
+      "is_canonical": true,
+      "is_merge": true,
+      "role": "merge",
+      "branch_step": null,
+      "branch_group": null
+    }
+  ],
+  "edges": [
+    [
+      "v01",
+      "v02"
+    ],
+    [
+      "v02",
+      "v03"
+    ],
+    [
+      "v02",
+      "v04"
+    ],
+    [
+      "v03",
+      "v05"
+    ],
+    [
+      "v04",
+      "v05"
+    ]
+  ],
+  "authored_version_forest": {
+    "schema": "authored_version_forest.v1",
+    "authoritative": true,
+    "direction": "provenance",
+    "topology": "diamond",
+    "root": "v01",
+    "tips": [
+      "v05"
+    ],
+    "canonical_tip": "v05",
+    "version_order": [
+      "v05",
+      "v04",
+      "v03",
+      "v02",
+      "v01"
+    ],
+    "nodes": [
+      {
+        "node_id": "v01",
+        "parents": [],
+        "children": [
+          "v02"
+        ],
+        "depth": 0,
+        "version_sequence": 4,
+        "change_pct": 0.0,
+        "is_root": true,
+        "is_tip": false,
+        "is_canonical": false,
+        "is_merge": false
+      },
+      {
+        "node_id": "v02",
+        "parents": [
+          "v01"
+        ],
+        "children": [
+          "v03",
+          "v04"
+        ],
+        "depth": 1,
+        "version_sequence": 3,
+        "change_pct": 32.72686535818946,
+        "is_root": false,
+        "is_tip": false,
+        "is_canonical": false,
+        "is_merge": false
+      },
+      {
+        "node_id": "v03",
+        "parents": [
+          "v02"
+        ],
+        "children": [
+          "v05"
+        ],
+        "depth": 2,
+        "version_sequence": 2,
+        "change_pct": 23.59608860305376,
+        "is_root": false,
+        "is_tip": false,
+        "is_canonical": false,
+        "is_merge": false
+      },
+      {
+        "node_id": "v04",
+        "parents": [
+          "v02"
+        ],
+        "children": [
+          "v05"
+        ],
+        "depth": 2,
+        "version_sequence": 1,
+        "change_pct": 19.230972317266897,
+        "is_root": false,
+        "is_tip": false,
+        "is_canonical": false,
+        "is_merge": false
+      },
+      {
+        "node_id": "v05",
+        "parents": [
+          "v03",
+          "v04"
+        ],
+        "children": [],
+        "depth": 3,
+        "version_sequence": 0,
+        "change_pct": 0.0,
+        "is_root": false,
+        "is_tip": true,
+        "is_canonical": true,
+        "is_merge": true
+      }
+    ],
+    "edges": [
+      [
+        "v01",
+        "v02"
+      ],
+      [
+        "v02",
+        "v03"
+      ],
+      [
+        "v02",
+        "v04"
+      ],
+      [
+        "v03",
+        "v05"
+      ],
+      [
+        "v04",
+        "v05"
+      ]
+    ]
+  },
+  "signals": {
+    "v01": [
+      {
+        "object_id": "s3://pacira-pharmaceuticals-in/cats/v01.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "path": "cats/v01.md",
+        "source_system": "s3",
+        "mtime": 1000000,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v02": [
+      {
+        "object_id": "s3://pacira-pharmaceuticals-in/cats/v02.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "path": "cats/v02.md",
+        "source_system": "s3",
+        "mtime": 1000100,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v03": [
+      {
+        "object_id": "s3://pacira-pharmaceuticals-in/cats/v03.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "path": "cats/v03.md",
+        "source_system": "s3",
+        "mtime": 1000200,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v04": [
+      {
+        "object_id": "s3://pacira-pharmaceuticals-in/cats/v04.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "path": "cats/v04.md",
+        "source_system": "s3",
+        "mtime": 1000300,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ],
+    "v05": [
+      {
+        "object_id": "s3://pacira-pharmaceuticals-in/cats/v05.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "path": "cats/v05.md",
+        "source_system": "s3",
+        "mtime": 1000400,
+        "object_version": null,
+        "version_timestamp": null
+      }
+    ]
+  },
+  "canonical_tip": "v05",
+  "source_doc": {
+    "title": "PACIRA PHARMACEUTICALS  INC. - A R STRATEGIC LICENSING  DISTRIBUTION AND MARKETING AGREEMENT",
+    "source_url": "cuad:PACIRA PHARMACEUTICALS_ INC. - A_R STRATEGIC LICENSING_ DISTRIBUTION AND MARKETING AGREEMENT.txt",
+    "doc_index": 5
+  }
+}

@@ -1,0 +1,33 @@
+# pycaber[auto] installed from local wheel in Dockerfile
+jsonschema>=4.23,<5
+PyYAML
+httpx~=0.27.0
+streamlit~=1.56.0
+streamlit-authenticator~=0.4.2
+python-dotenv
+openai>=2,<3
+wrapt>=1.14
+
+# ---------------------------------------------------------------------------
+# Agent loop (ticket 09): a LangGraph create_react_agent driving the MCP
+# server's tool catalog through langchain-mcp-adapters.
+#
+# `mcp` is capped below 2.0 ON PURPOSE. The 2.x line ships protocol revision
+# 2026-07-28 (the stateless core), renames the client entry point, and switches
+# to httpx2 -- none of which the ticket-09 redaction spike exercised, and the spike
+# is the only evidence that redaction actually survives this path. The demo MCP
+# server is verified against BOTH lines by tests/conformance, so lifting this cap
+# is a deliberate future step, not a silent upgrade.
+#
+# These pins resolve to exactly what the spike validated: mcp 1.29.0,
+# langchain-mcp-adapters 0.3.1, langgraph 1.2.10, langchain-core 1.5.2.
+#
+# langchain-mcp-adapters was not previously a dependency ANYWHERE in CaberDemos.
+# Adding it is ticket 09's explicit instruction: it is what turns the MCP server's
+# tools into LangChain `BaseTool`s, and `BaseTool` is the object pycaber.auto
+# patches -- i.e. it is what makes the demo's redaction claim reachable at all.
+# ---------------------------------------------------------------------------
+mcp>=1.29,<2
+langchain-mcp-adapters~=0.3.1
+langgraph>=1.2,<2
+langchain-openai>=1.4,<2

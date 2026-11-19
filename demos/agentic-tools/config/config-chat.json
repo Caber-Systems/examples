@@ -1,0 +1,459 @@
+{
+  "_demo": "agentic-tools-chat",
+  "_description": "Individual configuration for pycaber.auto inside agentic-chat-app",
+  "_txn_token_note": "caber.email baggage goes to every host except the model provider (email identity fallback spec U7). allowHosts keeps its default.",
+  "GLOBAL": {
+    "txnTokenConfig": {
+      "denyHosts": [
+        "*.openai.com",
+        "openai.com",
+        "*.anthropic.com",
+        "anthropic.com",
+        "*.nvidia.com",
+        "nvidia.com",
+        "*.googleapis.com",
+        "googleapis.com",
+        "*.groq.com",
+        "groq.com"
+      ]
+    }
+  },
+  "Compliance_Policies": {
+    "schema_version": 1,
+    "assurance_acknowledged": true,
+    "policy_runtime": {
+      "governed_api_hosts": [
+        "mcp-server-back-door",
+        "agentic-chat-app"
+      ]
+    },
+    "evidence_sources": []
+  },
+  "Auth_Analyzer": {
+    "nerVerdict": {
+      "enabled": false
+    }
+  },
+  "Identity_Sources": {
+    "filenameToUser": {
+      "type": "demo",
+      "priority": 1,
+      "identifier": "F2U",
+      "enabled": true,
+      "usage": [
+        "Object",
+        "Service"
+      ],
+      "columns": [
+        "object.id"
+      ]
+    },
+    "mock_idp_directory": {
+      "type": "scim",
+      "identifier": "MIMU",
+      "enabled": true,
+      "baseUrl": "http://mock-idp:8090/scim/v2",
+      "issuer": "http://mock-idp:8090",
+      "authoritativeEmailDomains": [
+        "demo.local"
+      ],
+      "refreshSeconds": 15,
+      "bearerTokenEnv": "MOCK_IDP_SCIM_TOKEN"
+    },
+    "agentic_chat_app": {
+      "type": "issuer",
+      "issuer": "agentic-chat-app",
+      "emailTrust": "provisioned"
+    }
+  },
+  "Dependencies": {
+    "shared-storage": {
+      "targets": {
+        "csi-dep-objstor": {
+          "type": "versitygw",
+          "region": "us-east-1"
+        }
+      }
+    }
+  },
+  "Object_Sources": {
+    "contractObjs": {
+      "type": "versitygw",
+      "addressing": "path",
+      "host_full": "csi-dep-objstor:9000",
+      "host": "csi-dep-objstor:9000",
+      "urls": [
+        "http://csi-dep-objstor:9000"
+      ],
+      "ports": [
+        9000,
+        9001
+      ],
+      "region": "us-east-1",
+      "accessKey": "madmin",
+      "secretKey": "${CSI_OBJECT_STORE_SECRET}",
+      "enableBktVersioning": false,
+      "buckets": [
+        "contracts"
+      ]
+    },
+    "customerObjs": {
+      "type": "versitygw",
+      "addressing": "path",
+      "host_full": "csi-dep-objstor:9000",
+      "host": "csi-dep-objstor:9000",
+      "urls": [
+        "http://csi-dep-objstor:9000"
+      ],
+      "ports": [
+        9000,
+        9001
+      ],
+      "region": "us-east-1",
+      "accessKey": "madmin",
+      "secretKey": "${CSI_OBJECT_STORE_SECRET}",
+      "enableBktVersioning": false,
+      "buckets": [
+        "customers"
+      ]
+    }
+  },
+  "ApiMap": {
+    "https://api.openai.com": {
+      "reqTimeout": 60,
+      "allowRedirects": true,
+      "enableOBO": true,
+      "serviceName": "openai",
+      "userIdKeys": [
+        "openai-organization"
+      ]
+    },
+    "https://api.anthropic.com": {
+      "reqTimeout": 60,
+      "allowRedirects": true,
+      "enableOBO": true,
+      "serviceName": "anthropic",
+      "userIdKeys": [
+        "anthropic-organization"
+      ]
+    },
+    "https://integrate.api.nvidia.com": {
+      "reqTimeout": 60,
+      "allowRedirects": true,
+      "enableOBO": true,
+      "serviceName": "nvidia",
+      "userIdKeys": []
+    },
+    "https://generativelanguage.googleapis.com": {
+      "reqTimeout": 60,
+      "allowRedirects": true,
+      "enableOBO": true,
+      "serviceName": "gemini",
+      "userIdKeys": []
+    },
+    "https://api.groq.com": {
+      "reqTimeout": 60,
+      "allowRedirects": true,
+      "enableOBO": true,
+      "serviceName": "groq",
+      "userIdKeys": []
+    },
+    "http://self:8083": {
+      "serviceName": "agentic-chat-app",
+      "protobufHandler": "streamlit",
+      "governance": {
+        "mode": "observe"
+      },
+      "registeredContentMode": true,
+      "enableOBO": true,
+      "userIdKeys": [],
+      "ignorePaths": [
+        "/static/*",
+        "/component/*"
+      ],
+      "reqTimeout": 60
+    },
+    "http://self:8501": {
+      "serviceName": "agentic-chat-app",
+      "protobufHandler": "streamlit",
+      "governance": {
+        "mode": "observe"
+      },
+      "registeredContentMode": true,
+      "enableOBO": true,
+      "userIdKeys": [],
+      "ignorePaths": [
+        "/static/*",
+        "/component/*"
+      ],
+      "reqTimeout": 60
+    },
+    "http://mcp-server-back-door:3010": {
+      "serviceName": "mcp-server-back-door",
+      "enableOBO": true,
+      "sessionCookie": "mcp-session-id",
+      "reqTimeout": 60,
+      "ignorePaths": [
+        "/health*"
+      ]
+    },
+    "selfAC:langchain": {
+      "serviceName": "agentic-chat-app",
+      "function": "intercept",
+      "enableOBO": true,
+      "maxBodyLen": 4194304,
+      "parseJSONstrVals": true,
+      "processCodeRegex": "2\\d{2}",
+      "interactionMode": "direct",
+      "reqTimeout": 60
+    },
+    "selfAC:*": {
+      "serviceName": "agentic-chat-app",
+      "function": "intercept",
+      "enableOBO": true,
+      "maxBodyLen": 4194304,
+      "parseJSONstrVals": true,
+      "processCodeRegex": "2\\d{2}",
+      "interactionMode": "direct",
+      "reqTimeout": 60
+    },
+    "selfAC": {
+      "serviceName": "langchain-agent",
+      "function": "intercept",
+      "enableOBO": true,
+      "maxBodyLen": 4194304,
+      "parseJSONstrVals": true,
+      "processCodeRegex": "2\\d{2}",
+      "interactionMode": "direct",
+      "reqTimeout": 60
+    },
+    "default": {
+      "function": "log",
+      "enableOBO": false,
+      "ignorePaths": [
+        "/health*"
+      ],
+      "processCodeRegex": "\\d{3}",
+      "maxBodyLen": 16777216,
+      "reqTimeout": 20
+    }
+  },
+  "Kafka_Scanner": {
+    "topics": [
+      "minio-audit"
+    ]
+  },
+  "Regex": {
+    "customer_bucket": "(contracts|customers)"
+  },
+  "Governance_Policies": {
+    "schema_version": 1,
+    "default_disposition": "permit",
+    "policies": [
+      {
+        "id": "CABER-INTEGRITY-001",
+        "kind": "system",
+        "priority": 0,
+        "enabled": true,
+        "locked": true,
+        "operation_mode": "enforce",
+        "name": "Unreadable governance facts are denied",
+        "body": {
+          "guard": "integrity"
+        }
+      },
+      {
+        "id": "CABER-CLARIFICATION-001",
+        "kind": "system",
+        "priority": 10,
+        "enabled": true,
+        "locked": true,
+        "operation_mode": "enforce",
+        "name": "Outstanding clarifications block release",
+        "body": {
+          "guard": "clarification"
+        }
+      },
+      {
+        "id": "CABER-SENSITIVE-DELIVERY-GRANT-001",
+        "kind": "system",
+        "priority": 100,
+        "enabled": false,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Sensitive delivery requires a grant",
+        "description": "Disabled in this demo. The entry stays only because PyCaber's policy-set validator requires every system policy to be present (missing_system_policy). The enabled guard, together with the HIPAA framework policy, is demonstrated by the hipaa-ner demo.",
+        "body": {
+          "guard": "sensitive_delivery",
+          "params": {
+            "default_release_grant": "granted"
+          }
+        }
+      },
+      {
+        "id": "CABER-ADJ-UNIT-001",
+        "kind": "adjudication_metapolicy",
+        "priority": 20,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Unit of enforcement",
+        "description": "How far a deny, stale or duplicate span spreads, and how a unit holding both flagged and clear bytes is settled.",
+        "body": {
+          "guard": "unit",
+          "params": {
+            "unit": "paragraph",
+            "conflict": "majority_release",
+            "majority_cutoff_pct": 50,
+            "key_groups": [],
+            "redact_directive_counts_as": "transform",
+            "agent": {
+              "unit": "key_group",
+              "conflict": "majority_release",
+              "majority_cutoff_pct": 50,
+              "key_groups": [
+                [
+                  "output",
+                  "input"
+                ]
+              ]
+            },
+            "overrides": [
+              {
+                "api_map": "http://mcp-server-back-door:3010",
+                "unit": "key_group",
+                "conflict": "majority_release",
+                "majority_cutoff_pct": 50,
+                "key_groups": [
+                  [
+                    "matches",
+                    "snippets"
+                  ]
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "CABER-COMBINE-001",
+        "kind": "combine_metapolicy",
+        "priority": 40,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Combine",
+        "body": {}
+      },
+      {
+        "id": "CABER-ADJ-STALE-001",
+        "kind": "adjudication_metapolicy",
+        "priority": 1000000,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Stale data",
+        "description": "How stale data is withheld, ranked against fresh results, or returned with a notice.",
+        "body": {
+          "guard": "stale",
+          "params": {
+            "mode": "withhold",
+            "when_fresh_outscored": "keep_stale",
+            "notify_model": false,
+            "dropped_item": "marker"
+          }
+        }
+      },
+      {
+        "id": "CABER-ADJ-DUPLICATE-001",
+        "kind": "adjudication_metapolicy",
+        "priority": 1000020,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Duplicates",
+        "description": "Keeps one item of each group of duplicate result-list items and drops the rest.",
+        "body": {
+          "guard": "duplicate",
+          "params": {
+            "threshold_pct": 80,
+            "keep": "highest_score_authorized",
+            "dropped_item": "marker"
+          }
+        }
+      },
+      {
+        "id": "CABER-ADJ-STALE-MISSING-001",
+        "kind": "adjudication_metapolicy",
+        "priority": 1000010,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Stale missing information",
+        "description": "How Stale handles missing freshness status, unresolved sources, unknown items, unscored items, and chunks with no result list.",
+        "body": {
+          "guard": "stale_missing",
+          "params": {
+            "no_status": "unknown",
+            "unresolved_source": "unknown",
+            "unknown_items": "neither",
+            "unscored_stale": "follow_rules",
+            "unscored_fresh": "ranks_below",
+            "when_no_list": "silent"
+          }
+        }
+      },
+      {
+        "id": "CABER-ADJ-DUPLICATE-MISSING-001",
+        "kind": "adjudication_metapolicy",
+        "priority": 1000030,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Duplicates missing information",
+        "description": "How Duplicates handles short items, unscored group members, and members of unknown freshness.",
+        "body": {
+          "guard": "duplicate_missing",
+          "params": {
+            "short_items": "never_duplicate",
+            "unscored_member": "ranks_below",
+            "unknown_freshness_member": "with_stale"
+          }
+        }
+      },
+      {
+        "id": "CABER-ADJ-FALLBACK-001",
+        "kind": "adjudication_metapolicy",
+        "priority": 1000040,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "Fallback",
+        "description": "What a result list returns when it holds no authorized fresh item.",
+        "body": {
+          "guard": "fallback",
+          "params": {
+            "mode": "best_stale_with_disclaimer"
+          }
+        }
+      },
+      {
+        "id": "AUTH-F2U",
+        "kind": "framework",
+        "priority": 500,
+        "enabled": true,
+        "locked": false,
+        "operation_mode": "enforce",
+        "name": "File-to-user ownership",
+        "description": "Users listed in the f2u owner list receive an object's content; any other caller falls through to default_disposition",
+        "body": {
+          "framework": "auth_source",
+          "params": {
+            "source": "f2u",
+            "unlisted_caller": "deny"
+          }
+        }
+      }
+    ]
+  }
+}

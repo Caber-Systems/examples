@@ -1,0 +1,34 @@
+[
+  {
+    "question": "What is the title of the agreement identified in the excerpt?",
+    "target_version": "v01"
+  },
+  {
+    "question": "On what date was the EDGE-FTE Strategic Alliance Agreement made effective?",
+    "target_version": "v01"
+  },
+  {
+    "question": "What is EDGE's principal place of business listed in the excerpt?",
+    "target_version": "v01"
+  },
+  {
+    "question": "What methods may be used to deliver a notice under the agreement?",
+    "target_version": "v02"
+  },
+  {
+    "question": "What email address is listed for notices to Cedar Ridge Foods, Inc.?",
+    "target_version": "v03"
+  },
+  {
+    "question": "Which types of nonpublic information are included in the definition of Confidential Information?",
+    "target_version": "v04"
+  },
+  {
+    "question": "How does the excerpt identify the parties that disclose and receive Confidential Information?",
+    "target_version": "v04"
+  },
+  {
+    "question": "What does the excerpt say about the terms of the Agreement in relation to Confidential Information?",
+    "target_version": "v05"
+  }
+]

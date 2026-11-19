@@ -1,0 +1,268 @@
+{
+  "files": [
+    {
+      "path": "buckets.yaml",
+      "sha256": "3368c6beaeae853fd8cabd80924a494838a0c71d693783e2536f4b1950c4eeba",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "cats/ftenetworks-inc-02-18-201/ground_truth.json",
+      "sha256": "c8784c0f8951a7c77d29c03b1789ba4536fd7a0349e263f3d09ce1d2ab0ce629",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "cats/ftenetworks-inc-02-18-201/questions.json",
+      "sha256": "eeca60d60ebab3f7d9536b0f39ec1f42dcff7b8684250555bc8af4a615aa8e1a",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "cats/ftenetworks-inc-02-18-201/v01.md",
+      "sha256": "7e03a4a0dff70de5efbbb39288e1e8f1b09e6f246aa19368435ae81d14fdaa02",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "1",
+      "last_revised": "2026-01-05"
+    },
+    {
+      "path": "cats/ftenetworks-inc-02-18-201/v02.md",
+      "sha256": "972f2caaa52bc34137ac570464f061cc2eaacd20c4e35b3473eb99d8ebc39c2e",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "2",
+      "last_revised": "2026-01-06"
+    },
+    {
+      "path": "cats/ftenetworks-inc-02-18-201/v03.md",
+      "sha256": "d44abbbf0e34cd9fefb944e36cb4e34785ce43946ec5581b0f37c92edea62ef2",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "3",
+      "last_revised": "2026-01-07"
+    },
+    {
+      "path": "cats/ftenetworks-inc-02-18-201/v04.md",
+      "sha256": "ac7e53504f7871a1f8def3a6dd79dcd53174f1c3169cf80c7d9b008ff8d565ab",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "4",
+      "last_revised": "2026-01-08"
+    },
+    {
+      "path": "cats/ftenetworks-inc-02-18-201/v05.md",
+      "sha256": "f95bad8ea71e9d0a82ed1351cbf57f8b3902766764d2b15db6474d82e70e0ebb",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "5",
+      "last_revised": "2026-01-09"
+    },
+    {
+      "path": "cats/pacira-pharmaceuticals-in/ground_truth.json",
+      "sha256": "2d99a1149e12218d58fe73f93d9bdb1941383cc7e6484c76f00e9f823318f1a5",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "cats/pacira-pharmaceuticals-in/questions.json",
+      "sha256": "eec9f9f5b43668eac2717cbd8d3d04303c58dd63d4b68b6ecbd9919a3f6d385b",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "cats/pacira-pharmaceuticals-in/v01.md",
+      "sha256": "b22a249d65fe5fb94f30f4f2dea6755dcce41cda3289138926e3b7c71fdb3df7",
+      "title": "PACIRA PHARMACEUTICALS  INC. - A R STRATEGIC LICENSING  DISTRIBUTION AND MARKETING AGREEMENT",
+      "version": "1",
+      "last_revised": "2026-01-05"
+    },
+    {
+      "path": "cats/pacira-pharmaceuticals-in/v02.md",
+      "sha256": "b5f71151604bfbf603e286c1014d188154e146fae50db248feab0979c64ee5b4",
+      "title": "PACIRA PHARMACEUTICALS  INC. - A R STRATEGIC LICENSING  DISTRIBUTION AND MARKETING AGREEMENT",
+      "version": "2",
+      "last_revised": "2026-01-06"
+    },
+    {
+      "path": "cats/pacira-pharmaceuticals-in/v03.md",
+      "sha256": "cbb08a779b04536810ab79d07b27221e508ea98f384af89eca3c13f4b15a3530",
+      "title": "PACIRA PHARMACEUTICALS  INC. - A R STRATEGIC LICENSING  DISTRIBUTION AND MARKETING AGREEMENT",
+      "version": "3",
+      "last_revised": "2026-01-07"
+    },
+    {
+      "path": "cats/pacira-pharmaceuticals-in/v04.md",
+      "sha256": "f1e279a69c430ce49a709ab61d7fee31a2cbcc7bdebadaac94acf66a827e110c",
+      "title": "PACIRA PHARMACEUTICALS  INC. - A R STRATEGIC LICENSING  DISTRIBUTION AND MARKETING AGREEMENT",
+      "version": "4",
+      "last_revised": "2026-01-07"
+    },
+    {
+      "path": "cats/pacira-pharmaceuticals-in/v05.md",
+      "sha256": "4bf54ba212aa67a70310eed808fc649c1fe4d12c5ea2ca8d1e14969141b586ae",
+      "title": "PACIRA PHARMACEUTICALS  INC. - A R STRATEGIC LICENSING  DISTRIBUTION AND MARKETING AGREEMENT",
+      "version": "5",
+      "last_revised": "2026-01-08"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-1-1/ground_truth.json",
+      "sha256": "ce3e9fbc8977ffd8050200ce19b1e0166a5b57f15474d3908a5673def13fbdd5",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-1-1/questions.json",
+      "sha256": "15ec0679e2c418f10e1a5f3b0dfda9321fc846ecdff376bf13e61e7e3414db4e",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-1-1/v01.md",
+      "sha256": "26dd9b1b414e5e4c619fc04c295fc27b3b98029a03970738ec5d7776bfa445cf",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "1",
+      "last_revised": "2026-01-05"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-1-1/v02.md",
+      "sha256": "50f9efc4c918f38562117a4b7228f413d4b54fb73f69151a15964db771e55190",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "2",
+      "last_revised": "2026-01-06"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-1-1/v03.md",
+      "sha256": "d81950a675fe6b5312203f20b519a759594a182a38d3fe864052fd5ba6a7356b",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "3",
+      "last_revised": "2026-01-07"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-1-1/v04.md",
+      "sha256": "b751a63cc5ab0986a4be18b8820be8c8acebfa319abd669aaabcca113428af85",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "4",
+      "last_revised": "2026-01-08"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-1-1/v05.md",
+      "sha256": "540561c50e4427d7973d3a3c49367b49ee102218b57d1216ed9aeca668cf3c6c",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "5",
+      "last_revised": "2026-01-09"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-201/ground_truth.json",
+      "sha256": "9bc0d5d8072b379e746df778b3f802b75ae0209d34b3d1cdc18e5de8b384cf56",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-201/questions.json",
+      "sha256": "f13a1895c4e720c3ceeed6c9a18bb9cb65c8b2fdfb8fc030654d245df6d92ce1",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-201/v01.md",
+      "sha256": "54240f267527ee043e46fef60afc799ef795876d2b1b0bb17180727c7f9eaa23",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "1",
+      "last_revised": "2026-01-05"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-201/v02.md",
+      "sha256": "361248d02bbfdc9ec91c80c8ba859ef7ab4fdff2228c626945bc9303e2b6c0bd",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "2",
+      "last_revised": "2026-01-06"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-201/v03.md",
+      "sha256": "f9fd84b7db67dddbadc6f69a8e8db5f7e1768d5492d7649b626b2b60a39b72e1",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "3",
+      "last_revised": "2026-01-07"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-201/v04.md",
+      "sha256": "de892618108681b6bb396c24615971faa3c1d34da10a4b0e935e676f330fd8a2",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "4",
+      "last_revised": "2026-01-06"
+    },
+    {
+      "path": "dogs/ftenetworks-inc-02-18-201/v05.md",
+      "sha256": "f6c8c8d9edc3a3cd79404905dab25c6bcd8ee115fd21c06b3ae304db4e299477",
+      "title": "FTENETWORKS INC 02 18 2016 -- STRATEGIC ALLIANCE AGREEMENT",
+      "version": "5",
+      "last_revised": "2026-01-07"
+    },
+    {
+      "path": "factory_questions.json",
+      "sha256": "9861abfca549fe19680bdb408a646b7fed1dec5795edc096ce72de913110fe8d",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "factory_questions_eval.json",
+      "sha256": "00b9b50ce09e110d6c85383b797c6e9ad3b55df8356b4d815298a244555ceb2c",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    },
+    {
+      "path": "timestamp_plan.json",
+      "sha256": "698d9885967d23181ab71c2146dcfab7db42cdf3b4b7bc9c837ef45960b82a4c",
+      "title": null,
+      "version": null,
+      "last_revised": null
+    }
+  ],
+  "generated_at": "2026-11-06T00:04:37.301735+00:00",
+  "factory_commit": "57ef09f75e36e0542fe6998435b2a236ab7ff28a",
+  "demo": "agentic-tools",
+  "domain": "contracts",
+  "topology": "mixed",
+  "topologies": [
+    "linear",
+    "diamond",
+    "pruned_tree"
+  ],
+  "target_docs": 5,
+  "docs_per_user": 10,
+  "chain_doc_targets": [
+    5,
+    5
+  ],
+  "base_seed": 42,
+  "users": [
+    "amy",
+    "bob"
+  ],
+  "groups": {
+    "amy": "cats",
+    "bob": "dogs"
+  },
+  "chains": {
+    "amy": [
+      "ftenetworks-inc-02-18-201",
+      "pacira-pharmaceuticals-in"
+    ],
+    "bob": [
+      "ftenetworks-inc-02-18-201",
+      "ftenetworks-inc-02-18-1-1"
+    ]
+  },
+  "frontmatter_base_date": "2026-01-05",
+  "caber_datafactory_version": "0.1.0",
+  "llm_model": "gpt-6-luna",
+  "llm_temperature": "default",
+  "source_demo": "agentgov-mimic"
+}

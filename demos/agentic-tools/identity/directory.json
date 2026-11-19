@@ -1,0 +1,230 @@
+{
+  "issuer": "http://mock-idp:8090",
+  "users": [
+    {
+      "id": "4a8ef92c-ea24-5649-8302-4b608b9b454d",
+      "userName": "amy",
+      "displayName": "Amy (Cats Co.)",
+      "name": {
+        "givenName": "Amy",
+        "familyName": "Cats"
+      },
+      "emails": [
+        {
+          "value": "amy@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [
+        "clinicians"
+      ],
+      "organization": "cats-co",
+      "groups": [
+        "cats"
+      ],
+      "password": "cats123",
+      "mfa": true
+    },
+    {
+      "id": "5f426add-a0c1-5cae-8b75-fab6b0879044",
+      "userName": "bob",
+      "displayName": "Bob (Dogs Inc.)",
+      "name": {
+        "givenName": "Bob",
+        "familyName": "Dogs"
+      },
+      "emails": [
+        {
+          "value": "bob@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [
+        "clinicians"
+      ],
+      "organization": "dogs-inc",
+      "groups": [
+        "dogs"
+      ],
+      "password": "dogs123",
+      "mfa": false
+    },
+    {
+      "id": "3c8a161e-dabe-56d7-af27-c836d57b9e45",
+      "userName": "admin",
+      "displayName": "Admin",
+      "name": {
+        "givenName": "Admin",
+        "familyName": "Demo"
+      },
+      "emails": [
+        {
+          "value": "admin@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [
+        "itadmin",
+        "compliance_officer"
+      ],
+      "organization": "admin",
+      "groups": [
+        "cats",
+        "dogs",
+        "itadmin"
+      ],
+      "password": "admin123",
+      "mfa": true
+    },
+    {
+      "id": "3a2af123-557a-5e35-b0be-519e1f658595",
+      "userName": "carol",
+      "displayName": "Carol",
+      "name": {
+        "givenName": "Carol",
+        "familyName": "Owner"
+      },
+      "emails": [
+        {
+          "value": "carol@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [],
+      "organization": "extra-owners",
+      "groups": [
+        "carol"
+      ]
+    },
+    {
+      "id": "d9ae9f62-c8b9-5295-897e-f2e55e9ab789",
+      "userName": "cara",
+      "displayName": "Cara",
+      "name": {
+        "givenName": "Cara",
+        "familyName": "Owner"
+      },
+      "emails": [
+        {
+          "value": "cara@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [],
+      "organization": "extra-owners",
+      "groups": [
+        "cara"
+      ]
+    },
+    {
+      "id": "b47b834c-8518-5c65-a527-2e10ab515efc",
+      "userName": "dan",
+      "displayName": "Dan",
+      "name": {
+        "givenName": "Dan",
+        "familyName": "Owner"
+      },
+      "emails": [
+        {
+          "value": "dan@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [],
+      "organization": "extra-owners",
+      "groups": [
+        "dan"
+      ]
+    },
+    {
+      "id": "1ef6475b-7f70-5bb3-a813-e5d141df6612",
+      "userName": "eve",
+      "displayName": "Eve",
+      "name": {
+        "givenName": "Eve",
+        "familyName": "Owner"
+      },
+      "emails": [
+        {
+          "value": "eve@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [],
+      "organization": "extra-owners",
+      "groups": [
+        "eve"
+      ]
+    },
+    {
+      "id": "5e2cbaaa-9f40-5636-bd38-d65e28ce0c48",
+      "userName": "fay",
+      "displayName": "Fay",
+      "name": {
+        "givenName": "Fay",
+        "familyName": "Owner"
+      },
+      "emails": [
+        {
+          "value": "fay@demo.local",
+          "primary": true,
+          "type": "work"
+        }
+      ],
+      "active": true,
+      "roles": [],
+      "organization": "extra-owners",
+      "groups": [
+        "fay"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "6b9226fb-9632-5d94-84c0-a9f1ffdca452",
+      "displayName": "cats"
+    },
+    {
+      "id": "70101d24-121b-568f-9215-05f903c59c06",
+      "displayName": "dogs"
+    },
+    {
+      "id": "3a8849b0-405d-5054-a497-8fb99cea889d",
+      "displayName": "itadmin"
+    },
+    {
+      "id": "60669c29-af2d-5a87-80b7-75fe028bc3e5",
+      "displayName": "carol"
+    },
+    {
+      "id": "f459fa25-0577-5fab-8911-901b8e005f51",
+      "displayName": "cara"
+    },
+    {
+      "id": "2bb5e9ad-025b-524d-a8b5-a892d2cb907e",
+      "displayName": "dan"
+    },
+    {
+      "id": "d808d54d-8ff0-5775-838b-b6f87e107fd1",
+      "displayName": "eve"
+    },
+    {
+      "id": "1f44bd99-ff7a-5bc0-9b11-3a77675ce959",
+      "displayName": "fay"
+    }
+  ]
+}

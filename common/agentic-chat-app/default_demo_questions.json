@@ -1,0 +1,17 @@
+{
+  "amy@demo.local": [
+    "Which service categories appear in my contracts and what security controls do they require?",
+    "Break down the monthly pricing and payment terms listed across my contract documents.",
+    "Describe the automatic renewal clauses and termination conditions in my agreements."
+  ],
+  "bob@demo.local": [
+    "Summarize the scope of services and compliance obligations found in my available contracts.",
+    "What are the billing structures and total monthly costs for contracts I have access to?",
+    "Pull together a summary of the customer profiles and account details assigned to me."
+  ],
+  "admin@demo.local": [
+    "How do the contractual obligations for Cats Co. differ from those negotiated with Dogs Inc.?",
+    "List every customer profile record visible across both the Cats Co. and Dogs Inc. tenants.",
+    "Identify the security and compliance requirements that appear consistently across all contracts."
+  ]
+}

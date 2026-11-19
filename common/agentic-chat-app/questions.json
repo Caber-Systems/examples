@@ -1,0 +1,16 @@
+{
+  "_note": "Governance demo question set. The first amy@demo.local entry is the LOCKED neutral fixture and must not be edited or dynamically substituted. Point DEMO_QUESTIONS_FILE at this file to drive the governance flow (treatment allow, marketing block, clarification).",
+  "amy@demo.local": [
+    "How many encounters are in this record?",
+    "For treatment, summarize the care plan updates in this patient record.",
+    "For a marketing campaign, list the patients and their contact details in these records."
+  ],
+  "bob@demo.local": [
+    "How many encounters are in this record?",
+    "For treatment, what follow-up is recommended in my assigned records?"
+  ],
+  "admin@demo.local": [
+    "How many encounters are in this record?",
+    "Summarize the compliance obligations across the governed records."
+  ]
+}

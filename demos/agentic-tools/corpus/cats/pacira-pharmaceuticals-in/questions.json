@@ -1,0 +1,34 @@
+[
+  {
+    "question": "What is the date of the Amended and Restated Strategic Licensing, Distribution and Marketing Agreement?",
+    "target_version": "v01"
+  },
+  {
+    "question": "Which two companies are named as parties to the agreement?",
+    "target_version": "v01"
+  },
+  {
+    "question": "How does the excerpt define an Affiliate in relation to a Party?",
+    "target_version": "v02"
+  },
+  {
+    "question": "For how long does an entity qualify as an Affiliate under the definition?",
+    "target_version": "v02"
+  },
+  {
+    "question": "What services will Harborlight Analytics provide to Juniper Vale Foods?",
+    "target_version": "v03"
+  },
+  {
+    "question": "How will the parties confirm each month\u2019s priorities under the Services Agreement?",
+    "target_version": "v05"
+  },
+  {
+    "question": "What type of reports will Lakefront Data Studio prepare for Copper Kettle Market?",
+    "target_version": "v04"
+  },
+  {
+    "question": "Where are the principal offices of Provider and Client located?",
+    "target_version": "v04"
+  }
+]

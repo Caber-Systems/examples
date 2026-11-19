@@ -1,0 +1,34 @@
+[
+  {
+    "question": "What is the stated Initial Term of the Strategic Alliance Agreement?",
+    "target_version": "v01"
+  },
+  {
+    "question": "What is EDGE Communications Solutions, LLC\u2019s principal place of business?",
+    "target_version": "v01"
+  },
+  {
+    "question": "As of what date does the agreement become effective according to the excerpt?",
+    "target_version": "v02"
+  },
+  {
+    "question": "What is FTE Networks, Inc.\u2019s principal place of business, as shown in the excerpt?",
+    "target_version": "v02"
+  },
+  {
+    "question": "What four types of work are listed in the scope of work?",
+    "target_version": "v03"
+  },
+  {
+    "question": "In which exhibits are the work categories outlined?",
+    "target_version": "v03"
+  },
+  {
+    "question": "What must Subcontractor obtain before subcontracting any part of the Work?",
+    "target_version": "v04"
+  },
+  {
+    "question": "How long does a Lower-tier Subcontractor have after written notice to correct an issue?",
+    "target_version": "v05"
+  }
+]

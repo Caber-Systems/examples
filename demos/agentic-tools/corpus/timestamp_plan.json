@@ -1,0 +1,211 @@
+{
+  "schema": "demo_timestamp_plan.v1",
+  "copy_rate": 0.0,
+  "copy_rate_source": "explicit",
+  "copy_rate_band": [
+    0.05,
+    0.2
+  ],
+  "sync_events": 0,
+  "seed": 42,
+  "tick_secs": 1.0,
+  "estimated_seconds": 4.0,
+  "total_objects": 20,
+  "notes": [
+    "RESOLVER WILL SEE NO SIGNAL: tick=1.0s does not clear PyCaber's storage-timestamp abstention margin (CSI_IDF_META_MARGIN_SECS, default 60s -- see RESOLVER_ABSTENTION_MARGIN_SECS in this module). storage_timestamp_constraint() abstains on any pair whose timestamps differ by <= the margin, so at this tick EVERY pair in this schedule falls inside it and the resolver derives ZERO ordering constraints -- these carefully-scheduled timestamps carry no signal at all unless CSI_IDF_META_MARGIN_SECS is set below 1.0s on the service that resolves versions.",
+    "cross-environment clock skew is not simulated: every object is stamped by one MinIO instance from one clock, so write order cannot produce a per-domain offset. Model it with a second endpoint or leave it out."
+  ],
+  "rounds": [
+    [
+      {
+        "key": "cats/v01.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 0,
+        "path": "cats/ftenetworks-inc-02-18-201/v01.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 0
+      },
+      {
+        "key": "cats/v01.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "round_index": 0,
+        "path": "cats/pacira-pharmaceuticals-in/v01.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 0
+      },
+      {
+        "key": "dogs/v01.md",
+        "bucket": "ftenetworks-inc-02-18-1-1",
+        "round_index": 0,
+        "path": "dogs/ftenetworks-inc-02-18-1-1/v01.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 0
+      },
+      {
+        "key": "dogs/v01.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 0,
+        "path": "dogs/ftenetworks-inc-02-18-201/v01.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 0
+      }
+    ],
+    [
+      {
+        "key": "cats/v02.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 1,
+        "path": "cats/ftenetworks-inc-02-18-201/v02.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 1
+      },
+      {
+        "key": "cats/v02.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "round_index": 1,
+        "path": "cats/pacira-pharmaceuticals-in/v02.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 1
+      },
+      {
+        "key": "dogs/v02.md",
+        "bucket": "ftenetworks-inc-02-18-1-1",
+        "round_index": 1,
+        "path": "dogs/ftenetworks-inc-02-18-1-1/v02.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 1
+      },
+      {
+        "key": "dogs/v02.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 1,
+        "path": "dogs/ftenetworks-inc-02-18-201/v02.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 1
+      },
+      {
+        "key": "dogs/v04.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 1,
+        "path": "dogs/ftenetworks-inc-02-18-201/v04.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 1
+      }
+    ],
+    [
+      {
+        "key": "cats/v03.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 2,
+        "path": "cats/ftenetworks-inc-02-18-201/v03.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 2
+      },
+      {
+        "key": "cats/v03.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "round_index": 2,
+        "path": "cats/pacira-pharmaceuticals-in/v03.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 2
+      },
+      {
+        "key": "cats/v04.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "round_index": 2,
+        "path": "cats/pacira-pharmaceuticals-in/v04.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 2
+      },
+      {
+        "key": "dogs/v03.md",
+        "bucket": "ftenetworks-inc-02-18-1-1",
+        "round_index": 2,
+        "path": "dogs/ftenetworks-inc-02-18-1-1/v03.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 2
+      },
+      {
+        "key": "dogs/v03.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 2,
+        "path": "dogs/ftenetworks-inc-02-18-201/v03.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 2
+      },
+      {
+        "key": "dogs/v05.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 2,
+        "path": "dogs/ftenetworks-inc-02-18-201/v05.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 2
+      }
+    ],
+    [
+      {
+        "key": "cats/v04.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 3,
+        "path": "cats/ftenetworks-inc-02-18-201/v04.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 3
+      },
+      {
+        "key": "cats/v05.md",
+        "bucket": "pacira-pharmaceuticals-in",
+        "round_index": 3,
+        "path": "cats/pacira-pharmaceuticals-in/v05.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 3
+      },
+      {
+        "key": "dogs/v04.md",
+        "bucket": "ftenetworks-inc-02-18-1-1",
+        "round_index": 3,
+        "path": "dogs/ftenetworks-inc-02-18-1-1/v04.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 3
+      }
+    ],
+    [
+      {
+        "key": "cats/v05.md",
+        "bucket": "ftenetworks-inc-02-18-201",
+        "round_index": 4,
+        "path": "cats/ftenetworks-inc-02-18-201/v05.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 4
+      },
+      {
+        "key": "dogs/v05.md",
+        "bucket": "ftenetworks-inc-02-18-1-1",
+        "round_index": 4,
+        "path": "dogs/ftenetworks-inc-02-18-1-1/v05.md",
+        "event": null,
+        "mechanism": "clean",
+        "group_index": 4
+      }
+    ]
+  ],
+  "events": []
+}
