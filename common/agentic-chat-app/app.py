@@ -42,7 +42,7 @@ logging.getLogger("pycaber.api_discovery").setLevel(logging.DEBUG)
 # lookups and redaction.  The chat app only does OBO tracking and
 # fingerprinting (RBIX).  CSI_GLOBAL_REDACT_ENABLED=false keeps redaction off.
 # ---------------------------------------------------------------------------
-os.environ.setdefault("CSI_CABER_HOST", "http://csi-dashboard:8050")
+os.environ.setdefault("CSI_CABER_HOST", "http://caber-core:5556")
 os.environ.setdefault("CSI_API_KEY", "abc123")
 os.environ.setdefault("CSI_GLOBAL_REDACT_ENABLED", "false")
 

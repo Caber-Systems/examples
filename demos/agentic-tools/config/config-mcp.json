@@ -336,8 +336,8 @@
         "body": {
           "guard": "stale",
           "params": {
-            "mode": "withhold",
-            "when_fresh_outscored": "keep_stale",
+            "mode": "rank",
+            "when_fresh_outscored": "drop_stale",
             "notify_model": false,
             "dropped_item": "marker"
           }

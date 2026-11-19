@@ -95,6 +95,22 @@ def _unset(var: str, who: str) -> str:
     return f"{var} is not set in .env.local or the environment; {who} needs it."
 
 
+def _select_provider(env: Mapping[str, str]) -> Provider:
+    """Resolve the active chat provider from ``SELECTED_LLM_PROVIDER`` or the first configured ``<PROVIDER>_API_KEY``."""
+    choices = ", ".join(NAMES)
+    name = _setting(env, "SELECTED_LLM_PROVIDER").upper()
+    if name:
+        spec = BY_NAME.get(name)
+        if spec is None:
+            raise ProviderError(f"SELECTED_LLM_PROVIDER={name} is not one of {choices}.")
+        return spec
+    for candidate in PROVIDERS:
+        if _setting(env, candidate.api_key_var):
+            return candidate
+    raise ProviderError(
+        f"SELECTED_LLM_PROVIDER is not set in .env.local or the environment; choose one of {choices}.")
+
+
 def resolve_providers(env: Mapping[str, str], *, embedding_dim: Optional[int] = None) -> dict[str, str]:
     """A NEW dict: ``env`` plus the variables the CI resolver sets for the selected provider.
 
@@ -102,14 +118,7 @@ def resolve_providers(env: Mapping[str, str], *, embedding_dim: Optional[int] = 
     and ``EmbeddingDimMissing`` when only the embedding dimension is unknown: no
     ``<PROVIDER>_EMBEDDING_DIM`` and no ``embedding_dim`` argument.
     """
-    choices = ", ".join(NAMES)
-    name = _setting(env, "SELECTED_LLM_PROVIDER").upper()
-    if not name:
-        raise ProviderError(
-            f"SELECTED_LLM_PROVIDER is not set in .env.local or the environment; choose one of {choices}.")
-    spec = BY_NAME.get(name)
-    if spec is None:
-        raise ProviderError(f"SELECTED_LLM_PROVIDER={name} is not one of {choices}.")
+    spec = _select_provider(env)
 
     key = _setting(env, spec.api_key_var)
     if not key:

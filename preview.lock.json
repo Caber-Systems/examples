@@ -96,12 +96,12 @@
     "mock-idp": 0
   },
   "files_sha256": {
-    "common/agentic-chat-app": "f05eeba7b824fed1f7e2e96d4e72adf3fa3ce271cf2ada28c15545102293e0fa",
-    "common/mcp-server": "bc5615d81e8edec3bd3215ecc0125e458a991b0e04e331f8b16b291470b23b3a",
-    "demos/agentic-tools/config/config-chat.json": "bc9e446a401416046bf7dfacba03ec5aab8a80874527b0d07ccff4bfc55060da",
-    "demos/agentic-tools/config/config-mcp.json": "848a653b9d96a2b4b432caf6c8d1ecac86f3c1ca6ef5484906ab69b22bc3e879",
-    "demos/agentic-tools/config/config.json": "c798f3d8aa37d98fda49cadfb392ddc94e135214b91b971135f3b1d861655063",
-    "demos/agentic-tools/docker-compose.yaml": "68201261faf6ba7acdde06eb554e6913923524069d8603614326cd8084c6aea8",
+    "common/agentic-chat-app": "8a20fad7e216ce8c8d170eb31edd65e547e96ecb789f1565a32a2da985c7a26f",
+    "common/mcp-server": "430a543e7d47ee54a0d1da6b878defbd0412494c16897b4de2f020ce6fc4d3cc",
+    "demos/agentic-tools/config/config-chat.json": "9e14d4d245d6dae1ff49b44bd0e5baa2a40c3b9e1a86abb91d060c95f7de3af2",
+    "demos/agentic-tools/config/config-mcp.json": "f81df0c68076f1b3bc8ffce19a6ea48ffdfa8d1ca636b35c6f115e1f7b5684be",
+    "demos/agentic-tools/config/config.json": "89bf2e97543b3de5c1c9a7e8b78c7f87b421ca9a797516e077fc2abb2cb391a4",
+    "demos/agentic-tools/docker-compose.yaml": "f2a7b564b99948dc50d938e08f3f6c59fb181d91cdd4d4042dbb51225627a5c0",
     "demos/agentic-tools/seed": "20d42306f1af9ee8b6159f36aba385ed25b3d636ddc28ab4ff792279c84def61"
   },
   "durations_s": {

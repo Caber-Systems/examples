@@ -101,7 +101,7 @@ if os.getenv("MCP_OBO_TRACE", "true").lower() != "false":
 # Setting the configuration variables for PyCaber Auto must happen before
 # importing pycaber.auto
 # ---------------------------------------------------------------------------
-os.environ.setdefault("CSI_CABER_HOST", "http://csi-dashboard:8050")
+os.environ.setdefault("CSI_CABER_HOST", "http://caber-core:5556")
 os.environ.setdefault("CSI_API_KEY", "abc123")
 os.environ.setdefault("CSI_GLOBAL_REDACT_ENABLED", "false")
 
@@ -1297,6 +1297,47 @@ class DirectMCPServer:
 
         return {"files": all_items, "path": rel_path or "/", "count": len(all_items)}
 
+    def _lookup_file_freshness_meta(self, file_path: str) -> Dict[str, Any]:
+        """Resolve optional `drift_report` / `regions` metadata attached to a file
+        via S3 object metadata (`caber-drift-b64` / `caber-regions-b64`) or an
+        optional `MCP_FRESHNESS_MANIFEST` JSON file."""
+        import base64
+
+        extra: Dict[str, Any] = {}
+        if self.use_minio and "/" in file_path:
+            bucket_type, object_name = file_path.split("/", 1)
+            client = self.minio_clients.get(bucket_type)
+            bucket_name = self.minio_buckets.get(bucket_type)
+            if client is not None and bucket_name and hasattr(client, "stat_object"):
+                try:
+                    stat = client.stat_object(bucket_name, object_name)
+                    raw_meta = {str(k).lower(): str(v) for k, v in (getattr(stat, "metadata", None) or {}).items()}
+                    for header_suffix, out_key in (
+                        ("caber-drift-b64", "drift_report"),
+                        ("caber-regions-b64", "regions"),
+                    ):
+                        encoded = raw_meta.get(f"x-amz-meta-{header_suffix}") or raw_meta.get(header_suffix)
+                        if encoded:
+                            extra[out_key] = json.loads(base64.b64decode(encoded).decode("utf-8"))
+                except Exception:  # noqa: BLE001 -- optional metadata lookup must never break read_file
+                    pass
+        manifest_path = os.getenv("MCP_FRESHNESS_MANIFEST", "").strip()
+        if not extra and manifest_path and os.path.isfile(manifest_path):
+            try:
+                with open(manifest_path, "r", encoding="utf-8") as fh:
+                    manifest = json.load(fh)
+                entry = (manifest.get("files") or {}).get(file_path) or (manifest.get("files") or {}).get(
+                    file_path.rsplit("/", 1)[-1]
+                )
+                if isinstance(entry, dict):
+                    if isinstance(entry.get("drift_report"), dict):
+                        extra["drift_report"] = entry["drift_report"]
+                    if isinstance(entry.get("regions"), list):
+                        extra["regions"] = entry["regions"]
+            except Exception:  # noqa: BLE001
+                pass
+        return extra
+
     async def _read_file(self, arguments: Dict[str, Any]) -> Dict[str, Any]:
         file_path = arguments.get("path", "").strip("/")
         if not file_path:
@@ -1317,7 +1358,9 @@ class DirectMCPServer:
             except PermissionError:
                 raise PermissionError(f"Permission denied reading file: {file_path}")
 
-        return {"content": content, "path": file_path, "size": len(content)}
+        out: Dict[str, Any] = {"content": content, "path": file_path, "size": len(content)}
+        out.update(self._lookup_file_freshness_meta(file_path))
+        return out
 
     async def _search_files(self, arguments: Dict[str, Any]) -> Dict[str, Any]:
         query = arguments.get("query", "")
@@ -1677,28 +1720,94 @@ class DirectMCPServer:
                 f"graphrag retriever returned a non-JSON scoped-search body: {exc}"
             ) from exc
 
-        items = body.get("items") or []
+        items = body.get("items") or body.get("results") or []
         results = []
         missing_path = []
+        primary_drift_report = None
+        primary_superseded_from = None
+        merged_regions: List[Dict[str, Any]] = []
         for item in items:
             path = (item.get("path") or "").strip()
             if not path:
                 missing_path.append(item.get("object_id") or item.get("retrieval_item_id"))
             content = item.get("content") or ""
-            results.append({
+            item_meta = item.get("metadata") if isinstance(item.get("metadata"), dict) else {}
+            snippets = item.get("snippets")
+            if not isinstance(snippets, list):
+                snippets = [content[:300]] if content else []
+            preview = item.get("preview") if isinstance(item.get("preview"), str) else content[:200]
+
+            chosen_member_id = (
+                item.get("chosen_member_id")
+                if item.get("chosen_member_id") is not None
+                else item_meta.get("chosen_member_id")
+            )
+            superseded_from = (
+                item.get("superseded_from")
+                if item.get("superseded_from") is not None
+                else item_meta.get("superseded_from")
+            )
+            drift_report = (
+                item.get("drift_report")
+                if item.get("drift_report") is not None
+                else item_meta.get("drift_report")
+            )
+            ordering_basis = (
+                item.get("ordering_basis")
+                or item_meta.get("ordering_basis")
+                or (drift_report.get("stale_basis") if isinstance(drift_report, dict) else None)
+            )
+            resolution_basis = (
+                item.get("resolution_basis")
+                or item_meta.get("resolution_basis")
+                or ordering_basis
+            )
+            regions = (
+                item.get("regions")
+                if item.get("regions") is not None
+                else item_meta.get("regions")
+            )
+
+            entry_meta: Dict[str, Any] = {
+                "retrieval_item_id": item.get("retrieval_item_id") or item_meta.get("retrieval_item_id"),
+                "edge_id": item.get("edge_id") or item_meta.get("edge_id"),
+                "region_id": item.get("region_id") or item_meta.get("region_id"),
+                "object_id": item.get("object_id") or item_meta.get("object_id"),
+                "object_name": item.get("object_name") or item_meta.get("object_name"),
+                "chosen_member_id": chosen_member_id,
+                "superseded_from": superseded_from,
+                "ordering_basis": ordering_basis,
+                "resolution_basis": resolution_basis,
+                "drift_report": drift_report,
+            }
+            if isinstance(regions, list):
+                entry_meta["regions"] = regions
+                merged_regions.extend(r for r in regions if isinstance(r, dict))
+
+            entry: Dict[str, Any] = {
                 "path": path,
                 "score": float(item.get("score") or 0.0),
-                "snippets": [content[:300]] if content else [],
-                "preview": content[:200],
-                "metadata": {
-                    "retrieval_item_id": item.get("retrieval_item_id"),
-                    "edge_id": item.get("edge_id"),
-                    "region_id": item.get("region_id"),
-                    "object_id": item.get("object_id"),
-                    "object_name": item.get("object_name"),
-                    "chosen_member_id": item.get("chosen_member_id"),
-                },
-            })
+                "snippets": snippets,
+                "preview": preview,
+                "chosen_member_id": chosen_member_id,
+                "superseded_from": superseded_from,
+                "ordering_basis": ordering_basis,
+                "resolution_basis": resolution_basis,
+                "drift_report": drift_report,
+                "metadata": entry_meta,
+            }
+            if isinstance(regions, list):
+                entry["regions"] = regions
+            results.append(entry)
+
+            if superseded_from and primary_superseded_from is None:
+                primary_superseded_from = superseded_from
+            if isinstance(drift_report, dict):
+                if primary_drift_report is None or (
+                    drift_report.get("is_drifted") and not primary_drift_report.get("is_drifted")
+                ):
+                    primary_drift_report = drift_report
+
         if missing_path:
             raise RuntimeError(
                 "graphrag retriever returned items without a document path "
@@ -1710,7 +1819,7 @@ class DirectMCPServer:
         logger.info("[GRAPH] returned %d permitted hit(s), %d denied; paths=%s",
                     len(results), len(denied), [r["path"] for r in results])
 
-        return {
+        reply: Dict[str, Any] = {
             "query": query,
             "results": results,
             "count": len(results),
@@ -1720,6 +1829,13 @@ class DirectMCPServer:
             "audit_refs": body.get("audit_refs") or [],
             "obo_user": obo_user,
         }
+        if primary_superseded_from is not None:
+            reply["superseded_from"] = primary_superseded_from
+        if primary_drift_report is not None:
+            reply["drift_report"] = primary_drift_report
+        if merged_regions:
+            reply["regions"] = merged_regions
+        return reply
 
     async def _list_all_files(self, arguments: Dict[str, Any]) -> Dict[str, Any]:
         include_metadata = arguments.get("include_metadata", True)
@@ -1921,9 +2037,11 @@ def _as_call_tool_result(result: Any, is_error: bool = False) -> Dict[str, Any]:
     """
     if not isinstance(result, dict):
         text = str(result)
+        wrapped = {"result": result}
         return {
             "content": [{"type": "text", "text": text}],
-            "structuredContent": {"result": result},
+            "structuredContent": wrapped,
+            "structured_content": wrapped,
             "isError": is_error,
         }
 
@@ -1932,6 +2050,7 @@ def _as_call_tool_result(result: Any, is_error: bool = False) -> Dict[str, Any]:
     meta = domain.pop("_meta", None)
     domain.pop("isError", None)
     domain.pop("structuredContent", None)
+    domain.pop("structured_content", None)
 
     raw_content = domain.pop("content", None)
     if isinstance(raw_content, str):
@@ -1951,6 +2070,7 @@ def _as_call_tool_result(result: Any, is_error: bool = False) -> Dict[str, Any]:
     envelope = dict(domain)  # legacy top-level fields, minus any content string
     envelope["content"] = [{"type": "text", "text": text}]
     envelope["structuredContent"] = structured
+    envelope["structured_content"] = structured
     envelope["isError"] = is_error
     if meta is not None:
         envelope["_meta"] = meta

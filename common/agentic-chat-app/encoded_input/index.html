@@ -52,8 +52,8 @@
         setComponentReady: function() {
           sendMessage("streamlit:componentReady", { apiVersion: 1 });
         },
-        setComponentValue: function(value) {
-          if (value !== lastValue) {
+        setComponentValue: function(value, force) {
+          if (force || value !== lastValue) {
             lastValue = value;
             sendMessage("streamlit:setComponentValue", { value: value });
           }
@@ -104,7 +104,7 @@
 
     textarea.addEventListener("input", function() {
       initialized = true;
-      Streamlit.setComponentValue(textarea.value);
+      Streamlit.setComponentValue(textarea.value, true);
     });
 
     Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender);

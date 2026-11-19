@@ -21,9 +21,9 @@ from runner.locked.providers import resolve_providers
 
 
 def merge_env_files(root: Path, *, environ: Mapping[str, str] = os.environ, read=read_env) -> dict[str, str]:
-    """``.env`` under ``.env.local`` under ``environ``; missing files contribute nothing."""
+    """``.env.template`` under ``.env`` under ``.env.local`` under ``environ``; missing files contribute nothing."""
     root = Path(root)
-    return {**read(root / ".env"), **read(root / ".env.local"), **environ}
+    return {**read(root / ".env.template"), **read(root / ".env"), **read(root / ".env.local"), **environ}
 
 
 def build_env(root: Path, *, environ: Mapping[str, str] = os.environ, read=read_env,

@@ -1,9 +1,9 @@
-ftenetworks-inc-02-18-1-1:
-  config_path: Object_Sources.fte11NetworksInc021811Objs.buckets
-  name: ftenetworks-inc-02-18-1-1
-ftenetworks-inc-02-18-201:
-  config_path: Object_Sources.fte201NetworksInc0218201Objs.buckets
-  name: ftenetworks-inc-02-18-201
+fte1-networks-02-18-1-1:
+  config_path: Object_Sources.fte1Networks021811Objs.buckets
+  name: fte1-networks-02-18-1-1
+fte201-networks-02-18-201:
+  config_path: Object_Sources.fte201Networks0218201Objs.buckets
+  name: fte201-networks-02-18-201
 pacira-pharmaceuticals-in:
   config_path: Object_Sources.paciraPharmaceuticalsInObjs.buckets
   name: pacira-pharmaceuticals-in
