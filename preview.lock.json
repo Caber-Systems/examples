@@ -14,7 +14,7 @@
   "images": {
     "caber-core": {
       "ref": "ghcr.io/caber-systems/caber-core:0.2.5683",
-      "digest": "sha256:b359ae31426fab23af8e5970236c73638ce85950328fc894ecf5f37f8b363de4"
+      "digest": "sha256:f9877b48bc6cf88d5521fcdf31b7984921289b7acd51cd061276e394ca10111d"
     },
     "versitygw": {
       "ref": "ghcr.io/versity/versitygw:v1.7.0",
@@ -29,12 +29,12 @@
       "digest": "sha256:fe3af4a8dd59f310b20e07ec3499cfdeb16a14f518c95ad7e70f200845dce3f5"
     },
     "caber-console": {
-      "ref": "ghcr.io/caber-systems/caber-console",
+      "ref": "ghcr.io/caber-systems/caber-console:preview",
       "digest": "sha256:32d73e1ae3e7022d54a65352ffad6398401f54408b34f510136352653947731f"
     },
     "mock-idp": {
       "ref": "ghcr.io/caber-systems/mock-idp:preview",
-      "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      "digest": "sha256:5984f3fa0166b2a223ada0c4e5b8f18d7c4f9cf62787229fb1c8b7293fa0f3c8"
     }
   },
   "sources": {
@@ -98,10 +98,10 @@
   "files_sha256": {
     "common/agentic-chat-app": "8a20fad7e216ce8c8d170eb31edd65e547e96ecb789f1565a32a2da985c7a26f",
     "common/mcp-server": "430a543e7d47ee54a0d1da6b878defbd0412494c16897b4de2f020ce6fc4d3cc",
-    "demos/agentic-tools/config/config-chat.json": "9e14d4d245d6dae1ff49b44bd0e5baa2a40c3b9e1a86abb91d060c95f7de3af2",
-    "demos/agentic-tools/config/config-mcp.json": "f81df0c68076f1b3bc8ffce19a6ea48ffdfa8d1ca636b35c6f115e1f7b5684be",
-    "demos/agentic-tools/config/config.json": "89bf2e97543b3de5c1c9a7e8b78c7f87b421ca9a797516e077fc2abb2cb391a4",
-    "demos/agentic-tools/docker-compose.yaml": "f2a7b564b99948dc50d938e08f3f6c59fb181d91cdd4d4042dbb51225627a5c0",
+    "demos/agentic-tools/config/config-chat.json": "d7f742213367694379f772b72853fdf2e0a61b084c7b06cdfcac35a67b14c120",
+    "demos/agentic-tools/config/config-mcp.json": "a964fdb2e54103750f8030e66731ebae28f121ac49572fdd1f9e683acbc08012",
+    "demos/agentic-tools/config/config.json": "ec541dad6090f18765f3a855e979648d8905ceebd7bd126ae0d1cdf2463c03cb",
+    "demos/agentic-tools/docker-compose.yaml": "5dc73b7feaecdf0bc91bc034c6bbffc2b9316865c07527f52f2dffaea7ffdc5a",
     "demos/agentic-tools/seed": "20d42306f1af9ee8b6159f36aba385ed25b3d636ddc28ab4ff792279c84def61"
   },
   "durations_s": {

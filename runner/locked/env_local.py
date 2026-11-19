@@ -10,6 +10,7 @@ started with stay put. The template itself is never edited.
 
 import os
 import secrets
+import uuid
 from pathlib import Path
 
 # MOCK_IDP_SCIM_TOKEN (ruling P2-55): mock-idp in the exported tree has no
@@ -30,6 +31,13 @@ def _key(line: str) -> str:
     return key.strip() if sep else ""
 
 
+def _generate_value(key: str, generate) -> str:
+    token = generate(SECRET_BYTES)
+    if key == "CSI_SEED_API_KEY" and generate is secrets.token_urlsafe:
+        return f"csi_dream_{uuid.uuid4()}.{token}"
+    return token
+
+
 def ensure(root: Path, template: Path, generate=secrets.token_urlsafe) -> Path:
     """Return ``root/.env.local``, creating it from ``template`` only when it is absent."""
     target = Path(root) / ".env.local"
@@ -46,13 +54,13 @@ def ensure(root: Path, template: Path, generate=secrets.token_urlsafe) -> Path:
     for line in text.splitlines():
         key = _key(line)
         if key in GENERATED:
-            lines.append(f"{key}={generate(SECRET_BYTES)}")
+            lines.append(f"{key}={_generate_value(key, generate)}")
             seen.add(key)
         else:
             lines.append(line)
     for key in GENERATED:
         if key not in seen:
-            lines.append(f"{key}={generate(SECRET_BYTES)}")
+            lines.append(f"{key}={_generate_value(key, generate)}")
     fd = os.open(target, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
     with os.fdopen(fd, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")

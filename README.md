@@ -166,12 +166,12 @@ pycaber 0.2.5683 from https://pypi.org/simple
 
 | Image | Digest |
 | --- | --- |
-| `ghcr.io/caber-systems/caber-core:0.2.5683` | `sha256:b359ae31426f` |
+| `ghcr.io/caber-systems/caber-core:0.2.5683` | `sha256:f9877b48bc6c` |
 | `ghcr.io/versity/versitygw:v1.7.0` | `sha256:c4cbd9d9cb8d` |
 | `opensearchproject/opensearch:2.19.5` | `sha256:4ee82ecb35d8` |
 | `softwaremill/elasticmq-native:1.6.11` | `sha256:fe3af4a8dd59` |
-| `ghcr.io/caber-systems/caber-console` | `sha256:32d73e1ae3e7` |
-| `ghcr.io/caber-systems/mock-idp:preview` | `sha256:000000000000` |
+| `ghcr.io/caber-systems/caber-console:preview` | `sha256:32d73e1ae3e7` |
+| `ghcr.io/caber-systems/mock-idp:preview` | `sha256:5984f3fa0166` |
 
 Durations of that run, in seconds:
 
